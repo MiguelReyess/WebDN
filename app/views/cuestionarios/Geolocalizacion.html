@@ -1,0 +1,50 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Geolocalización
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row" style="height: 210px" ng-if="datosCuestionario.Latitud">
+   <ui-gmap-google-map
+     ng-init="coords = {id: 1, zoom: 16, latitude: datosCuestionario.Latitud, longitude: datosCuestionario.Longitud }"
+     center="coords"
+     refresh="datosCuestionario.Latitud > 0"
+     zoom="coords.zoom"
+     options="{scrollwheel:false}"
+     >
+         <ui-gmap-marker
+         ng-init="ubicacion = {id: 1, zoom: 16, latitude: datosCuestionario.Latitud, longitude: datosCuestionario.Longitud }"
+         idKey="'id'"
+         coords="ubicacion"
+         options="{icon: 'images/marker_green.png'}"
+         >
+         </ui-gmap-marker>
+  </ui-gmap-google-map>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Latitud</div>
+   <div class="col-xs-7">{{ datosCuestionario.Latitud | number:6 }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Longitud</div>
+   <div class="col-xs-7">{{ datosCuestionario.Longitud | number:6 }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Fecha toma de ubicación</div>
+   <div class="col-xs-7">{{ datosCuestionario.FechaTomaGPS | toDate | formatoMoment:'DD-MMM-YYYY HH:mm:ss' }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Fecha toma de evidencia</div>
+   <div class="col-xs-7">{{ datosCuestionario.FechaTomaEvidencia | toDate | formatoMoment:'DD-MMM-YYYY HH:mm:ss' }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

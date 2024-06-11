@@ -1,0 +1,45 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Precios
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Codigo de barras</div>
+      <div class="col-xs-7">{{ producto.CodigoBarras }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Es caja</div>
+      <div class="col-xs-7">{{ producto.EsCaja | boolean }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio</div>
+      <div class="col-xs-7">{{ producto.Precio | currency }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio exhibido correctamente</div>
+      <div ng-if="producto.PrecioExhibidoCorrectamente != null" class="col-xs-7">{{ producto.PrecioExhibidoCorrectamente | boolean  }}</div>
+      <div ng-if="producto.PrecioExhibidoCorrectamente == null" class="col-xs-7">N/A</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(producto.Evidencia) }}"/>
+         <span ng-hide="producto.Evidencia">N/D</span>
+      </div>
+   </div>
+   <hr ng-if="!$last">
+</div>

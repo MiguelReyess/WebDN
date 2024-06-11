@@ -1,0 +1,53 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Información Específica de Producto
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Producto</div>
+   <div class="col-xs-7">{{ datosCuestionario.Producto.DescCorta || 'N/D' }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">SKU</div>
+   <div class="col-xs-7">{{ datosCuestionario.Producto.SKU || 'N/D' }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Precio</div>
+   <div class="col-xs-7">{{ datosCuestionario.PrecioProducto | currency }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Es resurtible</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsResurtible | boolean }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Piezas llegaron</div>
+   <div class="col-xs-7">{{ datosCuestionario.PiezasLlegaron }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Compania que elabora</div>
+   <div class="col-xs-7">{{ datosCuestionario.CompaniaElabora }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Empaque</div>
+   <div class="col-xs-7">{{ datosCuestionario.Empaque }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Marca</div>
+   <div class="col-xs-7">{{ datosCuestionario.Marca }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Observaciones</div>
+   <div class="col-xs-7">{{ datosCuestionario.Observaciones }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

@@ -1,0 +1,138 @@
+<div>
+    <form name="myForm">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group">
+                    <label for="cuestionario">Cuestionario</label>
+                    <select class="form-control" name="cuestionario" ng-model="cuestionario" ng-options="c as c.DescCorta for c in cuestionarios | orderBy: DescCorta ">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <select class="form-control" name="marca" ng-model="marca" ng-options="m as m.Descripcion for m in marcas">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <select class="form-control" name="usuario" ng-model="usuario" ng-options="u as (u.Nombre + ' ' + u.Nombre2 + ' ' + u.ApellidoPaterno + ' ' + u.ApellidoMaterno) for u in usuarios | orderBy: 'Nombre' track by u.ID">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group">
+                    <label for="filtro1">Cadena</label>
+                    <select class="form-control" name="cadena" ng-model="cadena" ng-options="c.CodigoCadena + ' - ' + c.Nombre for c in cadenas">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group" ng-class="{'has-success': myForm.fechaInicio.$valid, 'has-error': myForm.fechaInicio.$invalid}">
+                    <label for="fechaInicio">Inicio</label>
+                    <div class="input-group">
+                        <input ng-model="inicio" ng-click="inicio_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="inicio_open" type="text" name="fechaInicio" class="form-control" required/>
+                        <span class="input-group-addon" ng-click="inicio_open = true">
+                            <span class="fa fa-calendar" ng-class="{'fa-check': myForm.fechaInicio.$valid, 'fa-times': myForm.fechaInicio.$invalid}"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="form-group" ng-class="{'has-success': myForm.fechaFin.$valid, 'has-error': myForm.fechaFin.$invalid}">
+                    <label for="fechaFin">Fin</label>
+                    <div class="input-group">
+                        <input ng-model="fin" ng-click="fin_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="fin_open" type="text" name="fechaFin" class="form-control" required/>
+                        <span class="input-group-addon" ng-click="fin_open = true">
+                            <span class="fa fa-calendar" ng-class="{'fa-check': myForm.fechaFin.$valid, 'fa-times': myForm.fechaFin.$invalid}"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-3 col-sm-6 has-feedback">
+                <label for="filtro1">PDV</label>
+                <input ng-model="pdv" type="text" name="pdv" class="form-control" id="" placeholder="" typeahead-editable="false" typeahead-min-length="3" typeahead-wait-ms="500" uib-typeahead="cliente as cliente.Nombre for cliente in buscarCliente($viewValue)" typeahead-loading="loadingClientes">
+                <span ng-show="loadingClientes" class="form-control-feedback fa fa-refresh fa-spin"></span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <label for="filtro1">&nbsp;</label>
+                <div class="text-left">
+                    <button class="btn btn-success" ng-click="buscar()" ng-disabled="buscando">&nbsp;<i class="fa fa-search"> Buscar</i>&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr/>
+    <div class="row-fluid" ng-if="imagenes">
+        <div id="container-fluid">
+            <div class="row text-center">
+                <!-- pager -->
+                <ul ng-if="pager.pages.length" class="pagination" style="cursor: pointer">
+                    <li ng-class="{disabled:pager.currentPage === 1}">
+                        <a ng-click="setPage(1)">Primero</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === 1}">
+                        <a ng-click="setPage(pager.currentPage - 1)">Anterior</a>
+                    </li>
+                    <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                        <a ng-click="setPage(page)">{{page}}</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                        <a ng-click="setPage(pager.currentPage + 1)">Siguiente</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                        <a ng-click="setPage(pager.totalPages)">Último</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" vertilize-container>
+                <div ng-repeat="imagen in imagenes">
+                    <div class="col-lg-3 col-md-4 col-sm-6" style="margin-bottom: 10px;">
+                        <div class="thumbnail well" vertilize>
+                            <img class="img-responsive img-rounded" ng-if="imagen.RutaImagen" ng-src="{{imagen.RutaImagen}}"/>
+                            <img class="img-responsive img-rounded text-center" ng-if="!imagen.RutaImagen" ng-src="#" style="min-height: 50px;"/>
+                            <div class="caption">
+                                <h6><b>{{imagen.NombrePDV}}</b></h6>
+                                <h6>Captura: <b>{{imagen.NombreUsuario}}</b></h6>
+                                <h6>Marca: <b>{{(imagen.Marca ? imagen.Marca : 'S/M')}}</b></h6>
+                                <h6>Ciudad: <b>{{imagen.CiudadPDV}}</b></h6>
+                                <h6>Cuestionario: <b>{{imagen.Cuestionario}}</b></h6>
+                                <h6>Fecha: <b>{{imagen.FechaHora | date:'dd/MM/yyyy h:mm:ss a'}}</b></h6>
+                                <h6>&nbsp;</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <!-- pager -->
+                <ul ng-if="pager.pages.length" class="pagination" style="cursor: pointer">
+                    <li ng-class="{disabled:pager.currentPage === 1}">
+                        <a ng-click="setPage(1)">Primero</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === 1}">
+                        <a ng-click="setPage(pager.currentPage - 1)">Anterior</a>
+                    </li>
+                    <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                        <a ng-click="setPage(page)">{{page}}</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                        <a ng-click="setPage(pager.currentPage + 1)">Siguiente</a>
+                    </li>
+                    <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                        <a ng-click="setPage(pager.totalPages)">Último</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

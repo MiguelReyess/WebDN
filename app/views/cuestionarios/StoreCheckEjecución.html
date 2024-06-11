@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+       <h3>
+          Cuestionario de Store Check Ejecución
+       </h3>
+    </div>
+ </div>
+ 
+ <hr>
+ 
+<!-- <div ng-repeat="datosCuestionario in datosCuestionario"> -->
+ <div class="row">
+    <div class="col-xs-5 text-right">Producto</div>
+    <div class="col-xs-7">{{ datosCuestionario.producto.DescCorta || 'N/D' }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Tiene Oportunidad de Mejora?</div>
+    <div class="col-xs-7">{{ datosCuestionario.TieneOportunidaddeMejora | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Oportunidad de Mejora</div>
+    <div class="col-xs-7">{{ datosCuestionario.OportunidaddeMejora.Descripcion || 'N/D' }}</div>
+ </div>
+<!-- </div> -->

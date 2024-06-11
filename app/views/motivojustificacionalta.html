@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="page-header">
+            <h2><small>Alta de Justificaciones</small></h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div ng-form="form">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="FechaInicio">Fecha Inicio:</label>
+                        <div class="input-group">
+                            <input ng-model="fechaInicio" type="text" name="FechaInicio" class="form-control" ng-click="inicio_open = true" uib-datepicker-popup="dd/MMMM/yyyy" is-open="inicio_open" />
+                            <span class="input-group-btn">
+			                  <button type="button" class="btn btn-primary" ng-click="inicio_open = true">
+			                     <i class="fa fa-calendar"></i>
+			                  </button>
+			               </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="FechaFin">Fecha Fin:</label>
+                        <div class="input-group">
+                            <input ng-model="fechaFin" type="text" name="FechaFin" class="form-control" ng-click="fin_open = true" uib-datepicker-popup="dd/MMMM/yyyy" is-open="fin_open" />
+                            <span class="input-group-btn">
+			                  <button type="button" class="btn btn-primary" ng-click="fin_open = true">
+			                     <i class="fa fa-calendar"></i>
+			                  </button>
+			               </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group" ng-class="{'has-success': form.Justificacion.$valid, 'has-error': form.Justificacion.$invalid}">
+                        <label for="Justificacion">Motivo Justificación:</label>
+                        <div class="input-group">
+                            <select ng-model="tipoMotivoJustificacion" type="text" name="Justificacion" class="form-control" ng-options="d.DescCorta for d in motivoJustificaciones" required="true">
+				            	 <option value="">Selecciona una Justificación</option>
+				            </select>
+                            <span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.Justificacion.$valid, 'fa-times': form.Justificacion.$invalid}"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group" ng-class="{'has-success': form.PDV.$valid, 'has-error': form.PDV.$invalid}">
+                        <label for="Justificacion">PDV:</label>
+                        <div class="input-group">
+                            <input ng-model="PDV" type="text" name="PDV" class="form-control" placeholder="Cliente" autocomplete="off" ng-model="clienteAgregar" typeahead-editable="false" uib-typeahead="cliente as (cliente.CodigoJDE.trim() + ' - ' + cliente.Nombre) for cliente in clientes | filter:filtroAgregarCliente | filter:$viewValue" required="true" />
+                            <span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.PDV.$valid, 'fa-times': form.PDV.$invalid}"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" ng-class="{'has-success': form.comentarios.$valid, 'has-error': form.comentarios.$invalid}">
+                        <label for="Justificacion">Comentarios:</label>
+                        <div class="input-group">
+                            <textarea class="form-control" name="comentarios" style="max-width: 1289px;max-height: 50px;" rows="2" ng-model="comentarios" maxlength="100" required="true"></textarea>
+                            <span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.comentarios.$valid, 'fa-times': form.comentarios.$invalid}"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-sm btn-success btn-lg" ng-click="guardar()" ng-disabled="form.$invalid">
+			            Guardar
+			        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<table class="table">
+   <thead>
+      <tr>
+         <th>Producto</th>
+         <th ng-repeat="v in ventas">{{ v.Producto }}</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Objetivo del Mes</td>
+         <td ng-repeat="v in ventas">{{ v.ObjetivoMes }}</td>
+      </tr>
+      <tr>
+         <td>Avance</td>
+         <td ng-repeat="v in ventas">{{ v.Avance && (v.Avance + '%') }}</td>
+      </tr>
+      <tr>
+         <td>Promedio Vta Diaria</td>
+         <td ng-repeat="v in ventas"></td>
+      </tr>
+      <tr>
+         <td>
+            <span class="fa fa-minus"></span>
+            Últimos 7 días</td>
+         <td ng-repeat="v in ventas">{{ v.Promedio7Dias }}</td>
+      </tr>
+      <tr>
+         <td>
+            <span class="fa fa-minus"></span>
+            Días restantes</td>
+         <td ng-repeat="v in ventas">{{ v.PromedioDiasRestantes }}</td>
+      </tr>
+      <tr>
+         <td>Días de inventario</td>
+         <td ng-repeat="v in ventas">{{ v.DiasInventario }}</td>
+      </tr>
+   </tbody>
+</table>

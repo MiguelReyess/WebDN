@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="page-header">
+            <h2><small>Reporte de Justificaciones</small></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div ng-form="form">
+
+                <div class="form-group col-xs-3">
+                    <label for="filtro1">Fecha Inicio:</label>
+                    <div class="input-group">
+                        <input ng-model="inicio" ng-click="inicio_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="inicio_open" type="text" name="filtro1" class="form-control" />
+                        <span class="input-group-btn">
+		                  <button type="button" class="btn btn-primary" ng-click="inicio_open = true">
+		                     <i class="fa fa-calendar"></i>
+		                  </button>
+		               </span>
+                    </div>
+                </div>
+                <div class="form-group col-xs-3">
+                    <label for="filtro1">Fecha Fin:</label>
+                    <div class="input-group">
+                        <input ng-model="fin" ng-click="fin_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="fin_open" type="text" name="filtro1" class="form-control" />
+                        <span class="input-group-btn">
+		                  <button type="button" class="btn btn-primary" ng-click="fin_open = true">
+		                     <i class="fa fa-calendar"></i>
+		                  </button>
+		               </span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group" ng-class="{'has-success': form.usuarios.$valid, 'has-error': form.usuarios.$invalid}">
+                        <label for="">Usuario:</label>
+                        <div class="input-group">
+                            <select class="form-control" name="usuarios" required="true" ng-model="usuario" ng-options="(usuario.Nombre+ ' ' + usuario.nombre2 + ' ' + usuario.ApellidoPaterno + ' ' + usuario.ApellidoMaterno) for usuario in usuarios | orderBy:'Nombre' track by usuario.ID">
+								<option value="">Seleccionar Usuario</option>
+							</select>
+                            <span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.usuarios.$valid, 'fa-times': form.usuarios.$invalid}"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <button class="btn btn-success" style="margin-top:24px" ng-click="buscar()" ng-disabled="form.$invalid">
+						<i class="fa fa-search"></i> Buscar
+					</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div kendo-grid id="gridJustificaciones"></div>
+        </div>
+    </div>
+</div>

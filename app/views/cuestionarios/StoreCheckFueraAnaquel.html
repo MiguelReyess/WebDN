@@ -1,0 +1,54 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Store Check Fuera de Anaquel
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Se cuenta con espacios disponibles en la tienda para lograr exhibiciones adicionales</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsEspaciosDisponibles | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Se cuenta con producto exhibido fuera del mueble</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsFueraMueble | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Tipo de exhibición</div>
+   <div class="col-xs-7">{{ datosCuestionario.TipoExhibicion.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">La exhibición se encuentra abastecida</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsAbastecida | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El producto se encuentra frenteado y tiene la rotación según el estándar</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsFrenteado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Existen fallas de caducidad en el producto</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsFallaCaducidad | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">La exhibición esta libre de articulos ajenos a la activacion</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsLibreDeAjenos | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">La exhibición cuenta con precio exhibidos y vigentes</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsPrecioVigente | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">La exhibición cuenta con material POP colocado correctamente</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsColocacionPOP | boolean }}</div>
+</div>

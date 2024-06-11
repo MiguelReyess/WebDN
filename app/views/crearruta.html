@@ -1,0 +1,215 @@
+<div class="row">
+   <!-- Selector de cliente y promotor -->
+
+   <div class="col-xs-12">
+      <div class="row form-inline" ng-form="seleccionCliente">
+         <div class="col-sm-5">
+            <div class="form-group">
+               <label for="exampleInputPassword1">Promotor:</label>
+               <select  class="form-control" id="lstPromotor" name="" ng-model="ruta.Responsable" ng-options="p as (p.Usuario + ' - ' + p.Nombre + ' ' + p.ApellidoPaterno) for p in Promotores track by p.ID" style="width: 200px;"></select>
+            </div>
+         </div>
+         <div class="col-sm-5">
+             <div class="form-group has-feedback"  style="margin-left: 20px;">
+                <label for="filtro1">Cliente</label>
+                <div class="input-group-btn">
+                     <input ng-model="clienteAgregar" type="text" class="form-control" id="" placeholder="" typeahead-editable="false" typeahead-min-length="3" typeahead-wait-ms="500" uib-typeahead="cliente as cliente.Nombre for cliente in buscarClienteJefeSucursal($viewValue)" typeahead-loading="loadingClientes">
+                    <span ng-show="loadingClientes" class="form-control-feedback fa fa-refresh fa-spin"></span>
+                    <button class="btn btn-default" ng-click="agregarCliente()" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                     </button>
+                  </div>
+            </div>
+         </div>
+         <div class="col-xs-2 text-right">
+            <button class="btn btn-success" ng-click="guardar()">Guardar</button>
+         </div>
+      </div>
+
+      <div class="row margin-top-10" ng-form="frmDatosRuta">
+         <div class="form-group col-xs-3" con-validacion="frmDatosRuta.rutaNombre">
+            <label for="rutaNombre">Nombre</label>
+            <input class="form-control" name="rutaNombre" ng-model="ruta.Nombre" required type="text"/>
+         </div>
+         <div class="form-group col-xs-3" con-validacion="frmDatosRuta.rutaDescripcion">
+            <label for="rutaDescripcion">Código de ruta</label>
+            <input class="form-control" name="rutaDescripcion" ng-model="ruta.Descripcion" required type="text"/>
+         </div>
+         <div class="form-group col-xs-3" con-validacion="frmDatosRuta.rutaDescCorta">
+            <label for="rutaDescCorta">Descripción Corta</label>
+            <input class="form-control" name="rutaDescCorta" ng-model="ruta.DescCorta" type="text"/>
+         </div>
+         <div class="form-group col-xs-3" con-validacion="frmDatosRuta.tipoRuta">
+            <label for="tipoRuta">Tipo Ruta</label>
+            <select class="form-control" name="tipoRuta" ng-model="ruta.TipoRuta" ng-options="t as t.Nombre for t in TiposRuta track by t.ID" required>
+               <option value=""></option>
+            </select>
+         </div>
+      </div>
+
+   </div>
+</div>
+
+<div class="row margin-top-10" id="crearRutaConfig">
+
+   <!--              -->
+   <!--   CAPTURA    -->
+   <!--              -->
+
+   <div class="col-xs-12" style="height: 320px;">
+      <div class="panel panel-default panel-ruta">
+         <div>
+            <form >
+               <table class="table table-hover">
+                  <thead>
+                     <tr>
+                        <th>Cliente</th>
+                        <th class="text-center" ng-repeat="d in ['Lu','Ma','Mi','Ju','Vi','Sa','Do'] track by $index"><stront ng-show="esDia($index)">{{d}}</stront><a href="" ng-show="!esDia($index)" ng-click="seleccionaDia($index)">{{d}}</a></th>
+                        <th>Frecuencia</th>
+                        <th>Inicio</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <script id="crearruta/PDVpopover.html" type="text/ng-template">
+                        <div>
+                           {{ pdv.PDV.Nombre }}
+                           <hr>
+                           <dl>
+                              <dt>Dirección</dt>
+                              <dd>{{ pdv.PDV.Direccion }}</dd>
+                              <dt>Código SIC</dt>
+                              <dd>{{ pdv.PDV.ID }}</dd>
+                              <dt>Código JDE</dt>
+                              <dd>{{ pdv.PDV.CodigoJDE }}</dd>
+                              <dt>Responsable</dt>
+                              <dd>
+                                 {{ pdv.PDV.NombreContacto }}
+                              </dd>
+                              <dt>Zona</dt>
+                              <dd>
+                                 {{ pdv.PDV.Zona.Nombre }}
+                              </dd>
+                           </dl>
+                        </div>
+                     </script>
+                     <tr ng-repeat="pdv in pdvs" ng-class="{ success: pdv.PDV.ID === pdvHover }">
+                        <td>
+                           {{ pdv.PDV.Nombre }}
+                           <a href ng-click="mostrarInfoPDV(pdv)">
+                              <i class="fa fa-info-circle" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter" uib-popover-template="'crearruta/PDVpopover.html'"></i>
+                           </a>
+                        </td>
+                        <td class="text-center" ng-repeat="d in [2,3,4,5,6,7,1]">
+                           <input ng-change="recalcularMarkers()" class="input-dias-ruta" ng-model="pdv.dias[$index].OrdenVisita" style="width: 3em; display: inline;" type="number">
+                        </td>
+                        <td>
+                           <select class="form-control" ng-model="pdv.Frecuencia" ng-options="f.duracion as f.nombre for f in frecuencias"></select>
+                        </td>
+                        <td>
+                           <p class="input-group" style="width: 150px">
+                              <span class="input-group-btn">
+                                 <button class="btn btn-default" data-target="#fechaModal" data-toggle="modal" ng-click="abrirFecha(pdv)" type="button">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                 </button>
+                              </span>
+                              <input class="form-control" ng-value="pdv.SemanaPrimerVisita | date:'yyyy-S ww'" type="text"/>
+                           </p>
+                        </td>
+                        <td>
+                           <button type="button" class="btn btn-danger" ng-click="removerPDV(pdv)">
+                              <i class="fa fa-trash-o"></i>
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </form>
+         </div>
+      </div>
+   </div>
+
+</div>
+
+<div class="row" style="height: 530px;">
+
+   <div class="col-xs-12 col-sm-6 margin-top-10" style="height: 100%;">
+
+      <!--            -->
+      <!--    TABS    -->
+      <!--            -->
+      <!-- Info de cliente -->
+
+      <div class="panel panel-default panel-info-cliente" style="height: 100%;">
+         <div class="panel-heading">
+            {{ pdvSeleccionado.Nombre }}
+         </div>
+
+         <div class="panel-body">
+
+            <uib-tabset>
+               <uib-tab heading="Estadística">
+                  <ng-include src="'views/pdvestadistica.html'"></ng-include>
+               </uib-tab>
+               <uib-tab heading="Tareas">
+                  <ng-include src="'views/pdvtareas.html'"></ng-include>
+               </uib-tab>
+            </uib-tabset>
+
+         </div>
+      </div>
+
+   </div>
+
+   <div class="col-sm-6 hidden-xs margin-top-10" style="height: 100%;">
+      <div class="panel panel-default" style="height: 100%;">
+         <div class="panel-body" id="crearRutaMapa">
+            <ui-gmap-google-map  control="map.control" options='map.options' zoom='map.zoom'>
+               <ui-gmap-markers
+                  models='map.markers'
+                  coords="'coords'"
+                  options="'options'"
+                  events="{mouseover:enterMarker, mouseout:exitMarker}"
+                  click="clickMarker"
+                  icon="'icon'">
+               </ui-gmap-markers>
+               <ui-gmap-polyline path='map.path'
+                        stroke='map.stroke'
+                        clickable='false'
+                        draggable='false'
+                        editable='false'
+                        geodesic='true'
+                        icons='map.pathIcons'
+                        visible='true'
+                        static='true'
+               >
+            </ui-gmap-google-map>
+         </div>
+      </div>
+
+   </div>
+
+</div>
+
+<!-- Modal para selección de fecha de inicio -->
+
+<div aria-labelledby="myModalLabel" class="modal fade" id="fechaModal" role="dialog" tabindex="-1">
+   <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content" style="width: 350px; text-align: center;">
+         <div class="modal-header">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Semana de inicio</h4>
+         </div>
+         <div class="modal-body">
+            <div style="display: inline-block;">
+               <uib-datepicker class="well well-sm" date-disabled="diaValido(date)" min-date="minDate" ng-model="pdvFecha.SemanaPrimerVisita" show-weeks="true"></uib-datepicker>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+         </div>
+      </div>
+   </div>
+</div>

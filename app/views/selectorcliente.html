@@ -1,0 +1,20 @@
+<div class="modal-header">
+   <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+   <div class="pull-right" style="margin-right: 20px;">
+      <button
+         type="button"
+         class="btn btn-default"
+         ng-click="vm.seleccionarTodos()"
+         ng-show="seleccionMultiple">Seleccionar Todos</button>
+      <button type="button" class="btn btn-primary" ng-click="vm.buscar()">Buscar</button>
+   </div>
+   <h4 class="modal-title">Selector de Clientes</h4>
+</div>
+<div class="modal-body">
+
+   <busqueda-cliente
+      on-seleccionado="vm.seleccionado(pdv)"
+      seleccionar-todos="vm.seleccionarTodos"
+      control="vm.buscar"></busqueda-cliente>
+
+</div>

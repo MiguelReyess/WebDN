@@ -1,0 +1,196 @@
+<div class="col-sm-12">
+
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="page-header">
+            <h1>
+               <small>Datos del Usuario</small>
+            </h1>
+         </div>
+      </div>
+   </div>
+
+   <div class="row" ng-form="frmUsuario">
+      <div class="col-sm-7 form-horizontal">
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.nombre.$valid, 'has-error': frmUsuario.nombre.$invalid}">
+            <label class="control-label col-sm-4">Nombre</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="50" name="nombre" ng-model="usuario.Nombre" placeholder="Nombre del Usuario" required type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.nombre.$valid, 'fa-times': frmUsuario.nombre.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.nombre2.$valid, 'has-error': frmUsuario.nombre2.$invalid}">
+            <label class="control-label col-sm-4">Nombre 2</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="50" name="nombre2" ng-model="usuario.Nombre2" placeholder="Segundo Nombre del Usuario" type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.nombre2.$valid, 'fa-times': frmUsuario.nombre2.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.apellidoP.$valid, 'has-error': frmUsuario.apellidoP.$invalid}">
+            <label class="control-label col-sm-4">Apellido Paterno</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="50" name="apellidoP" ng-model="usuario.ApellidoPaterno" placeholder="Apellido Paterno" required type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.apellidoP.$valid, 'fa-times': frmUsuario.apellidoP.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.apellidoM.$valid, 'has-error': frmUsuario.apellidoM.$invalid}">
+            <label class="control-label col-sm-4">Apellido Materno</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="50" name="apellidoM" ng-model="usuario.ApellidoMaterno" placeholder="Apellido Materno" type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.apellidoM.$valid, 'fa-times': frmUsuario.apellidoM.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.puesto.$valid, 'has-error': frmUsuario.puesto.$invalid}">
+            <label class="control-label col-sm-4">Puesto</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <select class="form-control" name="puesto" ng-model="usuario.Puesto" ng-options="p.Descripcion for p in Puestos" required></select>
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.puesto.$valid, 'fa-times': frmUsuario.puesto.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.activeDirectory.$viewValue === true, 'has-error': frmUsuario.activeDirectory.$viewValue === false}">
+            <label class="control-label col-sm-4">¿Usuario con Dominio?</label>
+            <div class="col-sm-8">
+               <div class="toggle-switch toggle-switch-success">
+                  <label>
+                     <input name="activeDirectory" ng-model="usuario.ActiveDirectory" type="checkbox">
+                     <div class="toggle-switch-inner toggle-si-no"></div>
+                     <div class="toggle-switch-switch">
+                        <i class="fa fa-check"></i>
+                     </div>
+                  </label>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.usuario.$valid, 'has-error': frmUsuario.usuario.$invalid}">
+            <label class="control-label col-sm-4">Usuario</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="100" name="usuario" ng-model="usuario.Usuario" placeholder="Usuario para iniciar sesion" required type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.usuario.$valid, 'fa-times': frmUsuario.usuario.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.password.$valid, 'has-error': frmUsuario.password.$invalid}">
+            <label class="control-label col-sm-4">Contraseña</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="100" name="password" ng-disabled="frmUsuario.activeDirectory.$viewValue" ng-model="usuario.Password" ng-required="!frmUsuario.activeDirectory.$viewValue" placeholder="Contraseña para el inicio de sesion" type="password">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.password.$valid, 'fa-times': frmUsuario.password.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.dominio.$valid, 'has-error': frmUsuario.dominio.$invalid}">
+            <label class="control-label col-sm-4">Dominio</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <select class="form-control" name="dominio" ng-disabled="!frmUsuario.activeDirectory.$viewValue" ng-model="usuario.Dominio" ng-options="d.Descripcion for d in Dominios" ng-required="frmUsuario.activeDirectory.$viewValue"></select>
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.dominio.$valid, 'fa-times': frmUsuario.dominio.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.jefe.$valid, 'has-error': frmUsuario.jefe.$invalid}">
+            <label class="control-label col-sm-4">Jefe Nominal</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <select class="form-control" name="jefe" ng-model="usuario.JefeNominal" ng-options="p.Nombre + ' ' + p.ApellidoPaterno for p in Personas | orderBy:'Nombre + ApellidoPaterno'" required></select>
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.jefe.$valid, 'fa-times': frmUsuario.jefe.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.telefono.$valid, 'has-error': frmUsuario.telefono.$invalid}">
+            <label class="control-label col-sm-4">Teléfono</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" maxlength="10" name="telefono" ng-model="usuario.Telefono" pattern="[0-9]{10}" placeholder="Algun numero telefonico o Celular" required type="text">
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.telefono.$valid, 'fa-times': frmUsuario.telefono.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group" ng-class="{'has-success': frmUsuario.perfil.$valid, 'has-error': frmUsuario.perfil.$invalid}">
+            <label class="control-label col-sm-4">Perfil</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <select class="form-control" name="perfil" ng-model="usuario.Perfil" ng-options="p.Descripcion for p in Perfiles" required></select>
+                  <span class="input-group-addon">
+                     <span class="fa" ng-class="{'fa-check': frmUsuario.perfil.$valid, 'fa-times': frmUsuario.perfil.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+      </div>
+      <div class="col-sm-5">
+
+         <div class="form-group">
+            <label class="control-label ">Permisos a Sistemas</label>
+
+            <div class="row">
+               <div class="col-sm-4" ng-repeat="sistema in Sistemas">
+                  <div class="checkbox">
+                     <label>
+                        <input checklist-model="usuario.SistemasPermiso" checklist-value="sistema" type="checkbox">
+                        {{sistema.DescCorta}}
+                        <i class="fa fa-square-o"></i>
+                     </label>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <hr>
+
+   <div class="row">
+      <div class="col-sm-2 col-sm-offset-8">
+         <button class="btn btn-default btn-block pull-right" ng-click="limpiarCampos()">Limpiar</button>
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-success btn-block pull-right" ng-click="guardarUsuario()" ng-disabled="!frmUsuario.$valid">Guardar</button>
+      </div>
+   </div>
+
+</div>

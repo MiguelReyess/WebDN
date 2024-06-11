@@ -1,0 +1,115 @@
+<div class="row">
+
+   <div class="col-md-5">
+
+      <div class="panel panel-default">
+         <div class="panel-heading">
+            <h3 class="panel-title">Personas a Cargo</h3>
+         </div>
+         <div class="panel-body" style="height: calc(100vh - 120px); overflow: scroll; padding: 0">
+            <table class="table table-hover">
+               <thead>
+                  <tr>
+                     <th>Nombre</th>
+                     <th class="text-right">Configurar</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr ng-class="{success:persona === vm.personaActual}" ng-repeat="persona in vm.promotores | orderBy:'Nombre + \' \' + ApellidoPaterno'">
+                     <td>{{persona.Nombre + ' ' + (persona.Nombre2 || '') + ' ' + persona.ApellidoPaterno+ ' ' + persona.ApellidoMaterno}}</td>
+                     <td class="text-right">
+                        <button class="btn btn-default btn-sm" ng-click="vm.cargarPersona(persona)">
+                           <span class="fa fa-cog"></span>
+                        </button>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="col-md-7">
+
+      <div class="col-md-12" style="padding: 0">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Cuestionarios Disponibles</h3>
+            </div>
+
+            <div class="panel-body" style="height: calc(50vh - 100px); overflow: auto; padding: 0">
+               <table class="table table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th>
+                           Título
+                        </th>
+                        <th>
+                           Código
+                        </th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="config in vm.configs | enLista:vm.actuales:'ID':true track by config.ID">
+                        <td>{{ config.Titulo }}</td>
+                        <td>{{ config.Codigo }}</td>
+                        <td class="text-right">
+                           <button ng-disabled="!vm.personaActual" type="button" class="btn btn-xs btn-success" ng-click="vm.agregarCuestionario(config)">
+                              <i class="fa fa-plus"></i>
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+         </div>
+      </div>
+
+      <div class="col-md-12" style="padding: 0">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <button ng-if="vm.personaActual" type="button" class="btn btn-primary pull-right" ng-click="vm.guardar()">
+                  <i class="fa fa-save"></i>
+                  Guardar
+               </button>
+               <h3 class="panel-title">Cuestionarios Asignados</h3>
+               <span ng-bind-template="{{vm.personaActual.Nombre}}&nbsp;{{vm.personaActual.ApellidoPaterno}}"></span>
+            </div>
+            <div class="panel-body" style="height: calc(50vh - 100px); overflow: auto; padding: 0">
+               <table class="table table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th>
+                           Título
+                        </th>
+                        <th>
+                           Código
+                        </th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-if="!vm.actuales.length">
+                        <td colspan="3">Sin Cuestionarios</td>
+                     </tr>
+                     <tr ng-repeat="config in vm.actuales track by config.ID">
+                        <td>{{ config.Titulo }}</td>
+                        <td>{{ config.Codigo }}</td>
+                        <td class="text-right">
+                           <button type="button" class="btn btn-xs btn-danger" ng-click="vm.quitarCuestionario(config)">
+                              <i class="fa fa-trash"></i>
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+</div>

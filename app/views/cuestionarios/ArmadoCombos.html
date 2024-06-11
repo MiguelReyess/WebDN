@@ -1,0 +1,47 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Armado de Combos
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Inventario Inicial</div>
+   <div class="col-xs-7">{{ datosCuestionario.InventarioInicial }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Cantidad Combos Colocados Anaquel</div>
+   <div class="col-xs-7">{{ datosCuestionario.CantidadCombosColocadosAnaquel }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Cantidad Combos Colocados Exhibicion</div>
+   <div class="col-xs-7">{{ datosCuestionario.CantidadCombosColocadosExhibicion }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Cantidad Exhibiciones Combo</div>
+   <div class="col-xs-7">{{ datosCuestionario.CantidadExhibicionesCombo }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Precio Combo</div>
+   <div class="col-xs-7">{{ datosCuestionario.PrecioCombo | currency }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Total de frentes disponibles del combo</div>
+   <div class="col-xs-7">{{ datosCuestionario.TotalDeFrentesDisponiblesCombo | currency }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

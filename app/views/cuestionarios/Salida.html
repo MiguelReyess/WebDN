@@ -1,0 +1,41 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Salida
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row" style="height: 210px" ng-if="datosCuestionario.Latitud">
+   <ui-gmap-google-map ng-init="coords = {id: 1, zoom: 16, latitude: datosCuestionario.Latitud, longitude: datosCuestionario.Longitud }" center="coords" refresh="datosCuestionario.Latitud > 0" zoom="coords.zoom" options="{}">
+      <ui-gmap-marker idKey="'id'" coords="coords" options="{icon: 'images/marker_green.png'}"></ui-gmap-markers>
+   </ui-gmap-google-map>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Comentario de jefe de abarrotes</div>
+   <div class="col-xs-7">{{ datosCuestionario.ComentarioJefeAbarrotes.Descripcion || 'N/D' }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Minutos de apoyo en tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.MinutosApoyoTienda | number }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Observaciones</div>
+   <div class="col-xs-7">{{ datosCuestionario.Observaciones }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Firma</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Firma) }}"/>
+      <span ng-hide="datosCuestionario.Firma">N/D</span>
+   </div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

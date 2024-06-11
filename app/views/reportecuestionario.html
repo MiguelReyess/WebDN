@@ -1,0 +1,98 @@
+<div>
+   <div class="row">
+
+      <div class="col-md-4 col-xs-6">
+
+         <div class="form-group">
+            <label for="cuestionario">Cuestionario</label>
+            <select class="form-control" name="cuestionario" ng-model="cuestionario" ng-options="c as c.Descripcion for c in cuestionarios">
+               <option value="">Seleccionar</option>
+            </select>
+         </div>
+
+      </div>
+
+      <div class="col-xs-6 col-md-8 text-right">
+         <button type="button" class="btn btn-success btn-lg" ng-click="buscar()">
+            Buscar
+         </button>
+      </div>
+
+   </div>
+
+   <div class="row">
+
+      <div class="form">
+         <div class="form-group col-xs-4">
+            <label for="filtro1">Codigo</label>
+            <input ng-model="codigo" type="text" name="codigo" class="form-control" id="" placeholder="">
+         </div>
+
+         <div class="form-group col-xs-4">
+            <label for="filtro1">Cadena</label>
+            <select class="form-control" name="cadena" ng-model="cadena" ng-options="c.CodigoCadena + ' - ' + c.Nombre for c in cadenas">
+               <option value=""></option>
+            </select>
+         </div>
+
+         <div class="form-group col-xs-4 has-feedback">
+            <label for="filtro1">PDV</label>
+            <input ng-model="pdv" type="text" name="pdv" class="form-control" id="" placeholder="" typeahead-editable="false" typeahead-min-length="3" typeahead-wait-ms="500" uib-typeahead="cliente as cliente.Nombre for cliente in buscarCliente($viewValue)" typeahead-loading="loadingClientes">
+            <span ng-show="loadingClientes" class="form-control-feedback fa fa-refresh fa-spin"></span>
+         </div>
+
+         <div class="form-group col-xs-4">
+            <label for="filtro1">Inicio</label>
+            <div class="input-group">
+               <input ng-model="inicio" ng-click="inicio_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="inicio_open" type="text" name="filtro1" class="form-control" id="" placeholder="">
+               <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" ng-click="inicio_open = true">
+                     <i class="fa fa-calendar"></i>
+                  </button>
+               </span>
+            </div>
+         </div>
+
+         <div class="form-group col-xs-4">
+            <label for="filtro1">Fin</label>
+            <div class="input-group">
+               <input ng-model="fin" ng-click="fin_open = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="fin_open" type="text" name="filtro1" class="form-control" id="" placeholder="">
+               <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" ng-click="fin_open = true">
+                     <i class="fa fa-calendar"></i>
+                  </button>
+               </span>
+            </div>
+         </div>
+
+         <div class="form-group col-xs-4">
+            <label for="filtro1">Usuario</label>
+            <select class="form-control" ng-model="usuario" ng-options="u as (u.Nombre + ' ' + u.nombre2 + ' ' + u.ApellidoPaterno + ' ' + u.ApellidoMaterno) for u in usuarios | orderBy:'Nombre' track by u.ID">
+            </select>
+         </div>
+
+      </div>
+
+   </div>
+
+   <hr>
+
+   <div style="overflow-x: scroll;">
+      <div kendo-grid id="grid"></div>
+   </div>
+
+   <script type="text/ng-template" id="modal-imagen-reporte">
+      <div class="modal-header">
+         <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+         <h4 class="modal-title" id="">Imagen</h4>
+      </div>
+      <div class="modal-body text-center">
+         <img ng-src="{{imagen}}"></img>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-danger" ng-click="rechazar(idCuestionario)" ng-show="esAuditoria">Rechazar</button>
+         <button type="button" class="btn btn-default" ng-click="$dismiss()">Cerrar</button>
+      </div>
+   </script>
+
+</div>

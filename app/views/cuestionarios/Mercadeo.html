@@ -1,0 +1,95 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Mercadeo
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Frentes totales</div>
+   <div class="col-xs-7">{{ datosCuestionario[0].FrentesTotalesAnaquel | number }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Frentes totales anexo</div>
+   <div class="col-xs-7">{{ datosCuestionario[0].FrentesTotalesAnaquelAnexo || 0 | number }}</div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Fecha caducidad</div>
+      <div class="col-xs-7">{{ producto.FechaCaducidad | formatoMoment }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Existencia actual anaquel</div>
+      <div class="col-xs-7">{{ producto.ExistenciaActualAnaquel | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Cajas rellenar anaquel</div>
+      <div class="col-xs-7">{{ producto.CajasRellenarAnaquel | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Existencia actual exhibición</div>
+      <div class="col-xs-7">{{ producto.ExistenciaActualExhibicion | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Cajas rellenar exhibición</div>
+      <div class="col-xs-7">{{ producto.CajasRellenarExhibicion | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Frentes propios anaquel</div>
+      <div class="col-xs-7">{{ producto.FrentesPropiosAnaquel | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio público</div>
+      <div class="col-xs-7">{{ producto.PrecioPublico | currency }}</div>
+   </div>
+
+   <div ng-show="producto.ProductoCompetenciaFrentesTotales1">
+      <div class="row">
+         <div class="col-xs-5 text-right">Producto competencia 1</div>
+         <div class="col-xs-7">{{ producto.ProductoCompetenciaFrentesTotales1.DescCorta }}</div>
+      </div>
+      <div class="row">
+         <div class="col-xs-5 text-right">Frentes totales</div>
+         <div class="col-xs-7">{{ producto.FrentesTotalesCompetencia1 | number }}</div>
+      </div>
+   </div>
+
+   <div ng-if="producto.ProductoCompetenciaFrentesTotales2">
+      <div class="row">
+         <div class="col-xs-5 text-right">Producto competencia 2</div>
+         <div class="col-xs-7">{{ producto.ProductoCompetenciaFrentesTotales2.DescCorta }}</div>
+      </div>
+      <div class="row">
+         <div class="col-xs-5 text-right">Frentes totales</div>
+         <div class="col-xs-7">{{ producto.FrentesTotalesCompetencia2 | number }}</div>
+      </div>
+
+   </div>
+
+   <div ng-show="producto.ProductoCompetenciaFrentesTotales3">
+      <div class="row">
+         <div class="col-xs-5 text-right">Producto competencia 3</div>
+         <div class="col-xs-7">{{ producto.ProductoCompetenciaFrentesTotales3.DescCorta }}</div>
+      </div>
+      <div class="row">
+         <div class="col-xs-5 text-right">Frentes totales</div>
+         <div class="col-xs-7">{{ producto.FrentesTotalesCompetencia3 | number }}</div>
+      </div>
+   </div> 
+
+   <hr ng-if="!$last">
+</div>

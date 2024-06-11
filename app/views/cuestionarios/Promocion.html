@@ -1,0 +1,80 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Promoción
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene promoción</div>
+      <div class="col-xs-7">{{ producto.TienePromocion | boolean}}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio oferta</div>
+      <div class="col-xs-7">{{ producto.PrecioOferta | currency }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Fecha inicio vigencia</div>
+      <div class="col-xs-7">{{ producto.FechaInicioVigencia | formatoMoment }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Fecha fin vigencia</div>
+      <div class="col-xs-7">{{ producto.FechaFinVigencia | formatoMoment }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Activación</div>
+      <div class="col-xs-7">{{ producto.Activacion | boolean}}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tipo promoción</div>
+      <div class="col-xs-7">{{ producto.TipoPromocion.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Mecanica promoción</div>
+      <div class="col-xs-7">{{ producto.MecanicaPromocion }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene exhibición</div>
+      <div class="col-xs-7">{{ producto.TieneExhibicion | boolean }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tipo exhibición</div>
+      <div class="col-xs-7">{{ producto.TipoExhibicion.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Frentes totales de promooción</div>
+      <div class="col-xs-7">{{ producto.FrentesTotalesPromocion | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Activo recurso ragasa</div>
+      <div class="col-xs-7">{{ producto.ActivoRecursoRagasa.Descripcion || 'N/D' }}</div>
+   </div>
+   <div ng-if="producto.MaterialGrafico.length">
+      <div class="row">
+         <div class="col-xs-5 text-right">Material gráfico</div>
+         <div class="col-xs-7">
+            <span ng-repeat="material in producto.MaterialGrafico">{{ material.Nombre }}{{ $last ? '' : ', ' }}</span>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(producto.Evidencia) }}"/>
+         <span ng-hide="producto.Evidencia">N/D</span>
+      </div>
+   </div>
+   <hr ng-if="!$last">
+</div>

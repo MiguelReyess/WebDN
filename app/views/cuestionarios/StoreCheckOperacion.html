@@ -1,0 +1,123 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Store Check Operación
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">¿Se encontró al personal?</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsPersonalEncontrado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">La actitud del personal PDV es buena</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsBuenaActitud | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal de PDV da información apegada a lineamiento de marca</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsApegadaLineamiento | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">En el supuesto, el personal PDV realiza, canjea promocionales de productos de activacion de acuerdo a los lineamientos establecidos</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsCanjeoAcordeLineamiento | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV conoce los precios actuales que deben de tener cada marca de nuestros productos</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsConocePrecios | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV realiza un manejo de objeciones correcto, cierra la venta y sabe que clientes no debe abordar</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsManejoDeObjeciones | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV asistió a la tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsAsistio | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV llegó a tiempo a la tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsLlegoPuntual | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV cuenta con uniforme completo</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsUniformeCompleto | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV sabe determinar inventario</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsSabeDeterminarInventario | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Se realizó pedido por parte del personal PDV.</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsRealizoPedido | boolean }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV sabe que hacer si el cliente desea hacer algun comentario al 01 800 o en la página de marca</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsSabeComentarios | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Los reportes del personal PDV están firmados y sellados en su caso por los encargados de tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsReportesSelladosFirmados | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV conoce su cuota de venta por tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsConoceCuota | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">En general considera que el personal PDV realiza acciones para mejorar su venta</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsRealizaAccionesMejora | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Días de inventario</div>
+   <div class="col-xs-7">{{ datosCuestionario.DiasInventario | formatoMoment:'DD-MMM-YYYY' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Tenemos pedido en tránsito</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsPedidoEnTransito | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Piezas en tránsito</div>
+   <div class="col-xs-7">{{ datosCuestionario.CantidadPiezasTransito | number }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Fecha tentativa de entrega</div>
+   <div class="col-xs-7">{{ datosCuestionario.FechaTentativaEntrega | formatoMoment:'DD-MMM-YYYY' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">¿Se detectó algún evento de nuestra compañía?</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsEventoNuestroDetectado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Tipo de evento</div>
+   <div class="col-xs-7">{{ datosCuestionario.TipoEvento.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Número de visitas realiza el OPV por semana</div>
+   <div class="col-xs-7">{{ datosCuestionario.VisitasPorSemana | number }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Durante los últimos 30 días hubo cambios en el planograma de la tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsHuboCambiosEn30Dias | boolean }}</div>
+</div>

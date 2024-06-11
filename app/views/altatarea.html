@@ -1,0 +1,112 @@
+<div class="col-md-12" ng-form="formTarea">
+
+   <div class="row">
+
+      <div class="col-sm-6 form-horizontal">
+
+         <captura-texto required label="Descripción" model="contenido" name="tarea"></captura-texto>
+         <captura-fecha
+            required
+            name="fechaInicio"
+            label="Fecha Inicio"
+            model="fechaInicio"
+            max="fechaFin"
+            modelOptions="{allowInvalid: true}"></captura-fecha>
+         <captura-fecha
+            required
+            name="fechaFin"
+            label="Fecha Fin"
+            model="fechaFin"
+            min="fechaInicio"
+            modelOptions="{allowInvalid: true}"></captura-fecha>
+
+      </div>
+
+      <!-- Captura de PDVs -->
+
+      <div class="col-sm-6 form-horizontal" style="">
+
+         <h4>PDVs</h4>
+
+         <div class="panel panel-default" style="">
+
+            <div class="panel-body">
+
+               <div class="row">
+                  <div class="col-xs-6">
+                     <button ngf-select="cargarArchivo($file)" class="btn btn-primary btn-block">
+                        <i class="fa fa-file-excel-o"></i>
+                        Subir archivo CSV</button>
+                     <i class="fa fa-warning text-danger" ng-show="malos || repetidos"></i>
+                     <i class="pull-right fa fa-spin fa-refresh" ng-show="cargandoArchivo"></i>
+                  </div>
+                  <div class="col-xs-6">
+                     <selector-cliente on-seleccionado="seleccionaIDs(pdv)" seleccion-multiple="true">
+                        <button class="btn btn-primary btn-block" ng-click="abrir()">
+                           <i class="fa fa-search"></i>
+                           Buscar
+                        </button>
+                     </selector-cliente>
+                  </div>
+               </div>
+
+               <div
+                  class="alert alert-warning margin-top-15"
+                  ng-show="malos"
+                  style="max-height:210px; overflow-y:scroll;">
+                  <p>
+                     Los siguientes IDs no son reconocidos ({{ malos.length }}):
+                  </p>
+                  <ul>
+                     <li ng-repeat="malo in malos">{{ malo }}</li>
+                  </ul>
+               </div>
+
+               <div
+                  class="alert alert-info margin-top-15"
+                  ng-show="buenos"
+                  style="max-height:210px; overflow-y:scroll;">
+                  <p>
+                     Se enviarán los siguientes PDVs ({{ buenos.length }}):
+                     <button type="button" class="btn btn-danger btn-sm" ng-click="buenos = null">
+                       Limpiar
+                     </button>
+                  </p>
+                  <ul>
+                     <li ng-repeat="bueno in buenos">{{ bueno }}</li>
+                  </ul>
+               </div>
+
+               <div
+                  class="alert alert-warning margin-top-15"
+                  ng-show="repetidos"
+                  style="max-height:210px; overflow-y:scroll;">
+                  <p>
+                     Los siguientes códigos están repetidos, favor de verificar: ({{ repetidos.length }}):
+                  </p>
+                  <ul>
+                     <li ng-repeat="repetidos in repetidos">{{ repetidos }}</li>
+                  </ul>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+
+   <div class="row">
+      <div class="col-sm-2 col-sm-offset-8">
+         <button class="btn btn-default btn-block pull-right" ng-click="limpiar()">Limpiar</button>
+      </div>
+      <div class="col-sm-2">
+         <button
+            class="btn btn-success btn-block pull-right"
+            ng-click="guardar()"
+            ng-disabled="frmpdv.$invalid || !buenos">Guardar</button>
+      </div>
+   </div>
+
+</div>

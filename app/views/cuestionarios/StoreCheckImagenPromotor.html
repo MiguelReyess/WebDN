@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+       <h3>
+          Cuestionario de Store Check Imagen Promotor
+       </h3>
+    </div>
+ </div>
+ 
+ <hr>
+ 
+ <!-- <div ng-repeat="datosCuestionario in datosCuestionario"> -->
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Se encuentro al promotor en tienda?</div>
+    <div class="col-xs-7">{{ datosCuestionario.PromotorEnTienda | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Playera y pantalón?</div>
+    <div class="col-xs-7">{{ datosCuestionario.PlayeraPantalon | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Botas de seguridad?</div>
+    <div class="col-xs-7">{{ datosCuestionario.BotasDeSeguridad | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Muslera?</div>
+    <div class="col-xs-7">{{ datosCuestionario.Muslera | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Faja?</div>
+    <div class="col-xs-7">{{ datosCuestionario.Faja | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">¿Equipo de protección covid?</div>
+    <div class="col-xs-7">{{ datosCuestionario.EquipoProteccionCovid | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Evidencia</div>
+    <div class="col-xs-7">
+       <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+       <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+    </div>
+ </div>
+ <!-- </div> -->
+ 

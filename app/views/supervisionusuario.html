@@ -1,0 +1,67 @@
+<div class="row" id="mapContainerSupervision">
+    <div class="col-md-12">
+        <ui-gmap-google-map center="map.center" control="map.control" zoom='map.zoom' options='map.options'>
+            <ui-gmap-markers models='map.markers' coords="'Coords'" options="'options'" icon="'icon'" click="windowOpen" events="{mouseover:enterMarker, mouseout:exitMarker}">
+            </ui-gmap-markers>
+            <ui-gmap-window coords='map.windowOptions.coords' show='map.windowOptions.visible' isIconVisibleOnClick='true' closeClick='windowClose' options='map.windowOptions.infoOptions'>
+                <div>
+                    <div>
+                        <h5>{{ visitaVentana.PDV.Nombre }}
+                            <h5>
+                    </div>
+                    <div>
+                        {{ visitaVentana.InicioVisita | date:'shortTime'}} {{ visitaVentana.FinVisita && '-' }} {{ visitaVentana.FinVisita | date:'shortTime'}}
+                    </div>
+                    <div ng-if="visitaVentana.Justificada">
+                        Tienda Justificada
+                    </div>
+                </div>
+            </ui-gmap-window>
+            <ui-gmap-polyline path='map.path' stroke='map.stroke' clickable='false' draggable='false' editable='false' geodesic='true' icons='map.pathIcons' visible='true' static='true'>
+            </ui-gmap-polyline>
+        </ui-gmap-google-map>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th># SIC</th>
+                    <th># JDE</th>
+                    <th>Nombre</th>
+                    <th>Hora Entrada</th>
+                    <th>Hora Salida</th>
+                    <th>Tiempo en Tienda</th>
+                    <th>Traslado</th>
+                    <th>Estatus</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-class="{ 'success': (visita.ID == visitaHover) }" ng-repeat="visita in ruta">
+                    <td>{{ visita.PDV.ID }}</td>
+                    <td>{{ visita.PDV.CodigoJDE }}</td>
+                    <td>{{ visita.PDV.Nombre }}</td>
+                    <td>{{ visita.InicioVisita | date: 'shortTime' }}</td>
+                    <td>{{ visita.FinVisita | date: 'shortTime' }}</td>
+                    <td>{{ diferenciaFechas(visita.InicioVisita, visita.FinVisita) }}</td>
+                    <td>{{ trasladoVisita(visita) }}</td>
+                    <td>
+                        <span class="fa" ng-class="{
+                     'fa-clock-o': visita.InicioVisita === null,
+                     'fa-play text-primary': visita.InicioVisita !== null && visita.FinVisita === null,
+                     'fa-check text-success': visita.InicioVisita !== null && visita.FinVisita !== null,
+                     'fa-bed text-warning' : visita.Justificada
+                  }"></span>
+                    </td>
+                    <td>
+                        <a ui-sref="detalle-visita({idVisita:visita.ID})" class="btn btn-default">
+                            <span class="fa fa-info-circle"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

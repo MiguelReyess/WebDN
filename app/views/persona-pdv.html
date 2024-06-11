@@ -1,0 +1,60 @@
+<div class="row">
+   <div class="col-md-2">
+      <selector-cliente modelo="vm.pdvActual" on-seleccionado="vm.pdvSeleccionado(pdv)">
+         <button type="button" class="btn btn-primary btn-block" ng-click="abrir()">
+            Seleccionar PDV
+         </button>
+      </selector-cliente>
+   </div>
+   <div class="col-md-8">
+      <h3 ng-show="vm.pdvActual" ng-bind-template="{{vm.pdvActual.ID}} - {{vm.pdvActual.Nombre}}"></h3>
+   </div>
+   <div class="col-md-2">
+      <button type="button" class="btn btn-success btn-block" ng-click="vm.guardar()">
+         <i class="fa fa-save"></i>
+         Guardar
+      </button>
+   </div>
+</div>
+
+<hr>
+
+<div class="row" ng-form="formPersonas">
+
+   <div class="col-md-6 form-horizontal">
+
+      <captura-combo
+         array="vm.gerentes"
+         label="Gerente Canal"
+         model="vm.gerente"
+         texto-opcion="item.NombreCompleto"
+         track-by="item.ID"
+         con-vacio="'Sin Asignar'"></captura-combo>
+
+      <captura-combo
+         array="vm.asesores"
+         label="Asesor Comercial"
+         model="vm.asesor"
+         texto-opcion="item.NombreCompleto"
+         track-by="item.ID"
+         con-vacio="'Sin Asignar'"></captura-combo>
+
+      <captura-combo
+         array="vm.opvsVendedores"
+         label="OPV / Vendedor Jr."
+         model="vm.opvVendedor"
+         texto-opcion="item.NombreCompleto"
+         track-by="item.ID"
+         con-vacio="'Sin Asignar'"></captura-combo>
+
+      <captura-combo
+         array="vm.promotores"
+         label="Promotor"
+         model="vm.promotor"
+         texto-opcion="item.NombreCompleto"
+         track-by="item.ID"
+         con-vacio="'Sin Asignar'"></captura-combo>
+
+   </div>
+
+</div>

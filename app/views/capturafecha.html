@@ -1,0 +1,16 @@
+<div class="form-group" ng-class="{'has-success': form.{{name}}.$valid, 'has-error': form.{{name}}.$invalid}">
+   <label class="control-label col-sm-4">{{ label }}</label>
+   <div class="col-sm-8">
+      <div class="input-group">
+         <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="popupAbierto = true">
+               <span class="fa fa-calendar"></span>
+            </button>
+         </span>
+         <input ng-model="model" ng-click="popupAbierto = true" uib-datepicker-popup="dd-MMM-yyyy" is-open="popupAbierto" class="form-control" name="{{name}}" type="text">
+         <span class="input-group-addon">
+            <span class="fa fa-fw" ng-class="{'fa-check': form.{{name}}.$valid, 'fa-times': form.{{name}}.$invalid}"></span>
+         </span>
+      </div>
+   </div>
+</div>

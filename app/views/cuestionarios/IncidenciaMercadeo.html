@@ -1,0 +1,58 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Incidencias de Mercadeo
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene Incidencias</div>
+      <div class="col-xs-7">{{ producto.HayIncidencia | boolean }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Descripción</div>
+      <div class="col-xs-7">{{ producto.Descripcion }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Fecha Lote</div>
+      <div class="col-xs-7">{{ producto.FechaLote | toDate | formatoMoment:'DD-MMM-YYYY HH:mm:ss' }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Línea</div>
+      <div class="col-xs-7">{{ producto.Linea }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Botellas con problema</div>
+      <div class="col-xs-7">{{ producto.BotellasProblema }}</div>
+   </div>
+
+   <div class="row">
+      <div class="col-xs-5 text-right">Total de piezas en tienda</div>
+      <div class="col-xs-7">{{ producto.TotalPiezasTienda }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Total de piezas reparadas</div>
+      <div class="col-xs-7">{{ producto.TotalPiezasReparadas }}</div>
+   </div>
+
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(producto.Evidencia) }}"/>
+         <span ng-hide="producto.Evidencia">N/D</span>
+      </div>
+   </div>
+   <hr ng-if="!$last">
+</div>

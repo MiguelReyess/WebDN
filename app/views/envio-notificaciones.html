@@ -1,0 +1,76 @@
+<div class="col-md-12" ng-form="vm.formNotificaciones">
+
+   <div class="row">
+
+      <div class="col-sm-10 form-horizontal">
+
+         <div
+            class="form-group"
+            ng-class="{'has-success': vm.formNotificaciones.destinatario.$valid, 'has-error': vm.formNotificaciones.destinatario.$invalid}">
+            <label class="control-label col-sm-4">Destinatario</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+
+                  <ui-select multiple required theme="bootstrap" ng-model="vm.destinatario" name="destinatario">
+                     <ui-select-match allow-clear="true" placeholder="Seleccionar al menos un destinatario">
+                        <span ng-bind="$item.Usuario"></span>
+                     </ui-select-match>
+                     <ui-select-choices repeat="persona in vm.personas | filter:$select.search track by persona.ID">
+                        <span ng-bind-html="persona.Usuario | highlight:$select.search"></span>
+                        -
+                        <span ng-bind-html="persona.NombreCompleto | highlight:$select.search"></span>
+                     </ui-select-choices>
+                  </ui-select>
+
+                  <span class="input-group-addon">
+                     <span
+                        class="fa fa-fw"
+                        ng-class="{'fa-check': vm.formNotificaciones.destinatario.$valid, 'fa-times': formNotificaciones.destinatario.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <!-- <captura-combo
+            required
+            array="vm.personas"
+            label="Destinatario"
+            model="vm.destinatario"
+            texto-opcion="item.Usuario + ' - ' + item.NombreCompleto"
+            track-by="item.ID"></captura-combo> -->
+
+         <captura-texto required label="Título" model="vm.titulo" name="tarea"></captura-texto>
+
+         <div
+            class="form-group"
+            ng-class="{'has-success': vm.formNotificaciones.mensaje.$valid, 'has-error': vm.formNotificaciones.mensaje.$invalid}">
+            <label class="control-label col-sm-4">Mensaje</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <textarea ng-model="vm.mensaje" name="mensaje" class="form-control" rows="3" required></textarea>
+                  <span class="input-group-addon">
+                     <span
+                        class="fa fa-fw"
+                        ng-class="{'fa-check': vm.formNotificaciones.mensaje.$valid, 'fa-times': vm.formNotificaciones.mensaje.$invalid}"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+
+   <div class="row">
+      <div class="col-sm-2 col-sm-offset-8">
+         <button class="btn btn-default btn-block pull-right" ng-click="vm.limpiar()">Limpiar</button>
+      </div>
+      <div class="col-sm-2">
+         <button
+            class="btn btn-success btn-block pull-right"
+            ng-click="vm.enviar()"
+            ng-disabled="vm.formNotificaciones.$invalid || !vm.destinatario.length">Enviar</button>
+      </div>
+   </div>
+
+</div>

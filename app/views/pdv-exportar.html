@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-primary" ng-click="vm.buscarFiltros()">
+         Buscar
+      </button>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <!-- <busqueda-cliente control="vm.buscar" exportar="true"></busqueda-cliente> -->
+
+    </div>
+    <div>
+        <form class="form-horizontal" name="vm.busqueda" ng-submit="vm.buscarFiltros()">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <captura-texto label="Código SIC" type="number" model="vm.CodigoSIC" name="CodigoSIC" autofocus></captura-texto>
+                    <captura-texto label="Código JDE" type="number" model="vm.CodigoJDE" name="CodigoJDE"></captura-texto>
+                    <captura-texto label="Nombre" model="vm.Nombre" name="Nombre"></captura-texto>
+                    <captura-combo con-vacio="'Todos'" array="vm.cadenas" texto-opcion="item.Nombre" label="Cadena" model="vm.Cadena" name="cadena" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.estados" change="vm.cambiaEstado()" texto-opcion="item.Nombre" label="Estado" model="vm.Estado" name="Estado" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.municipios" texto-opcion="item.Nombre" label="Ciudad" model="vm.Municipio" name="Municipio" track-by="item.row"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.asesores" texto-opcion="item.Label" label="Asesor" model="vm.Asesor" name="Asesor" track-by="item.ID"></captura-combo>
+                </div>
+
+                <div class="col-sm-6">
+                    <captura-combo con-vacio="'Todos'" array="vm.zonas" texto-opcion="item.Nombre" label="Zona" model="vm.Zona" name="Zona" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.gruposcanales" texto-opcion="item.Nombre" label="Grupo Canal" model="vm.GrupoCanal" name="GrupoCanal" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.GrupoCanal.Canales" texto-opcion="item.Nombre" label="Canal" model="vm.Canal" name="Canal" track-by="item.ID"> </captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.Canal.TiposPDV" texto-opcion="item.Nombre" label="Tipo PDV" model="vm.TipoPDV" name="TipoPDV" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.TipoPDV.SegmentosPDV" texto-opcion="item.Nombre" label="Segmento PDV" model="vm.SegmentoPDV" name="SegmentoPDV" track-by="item.ID"></captura-combo>
+                    <captura-combo con-vacio="'Todos'" array="vm.Canal.TiposCliente" texto-opcion="item.Nombre" label="Tipo de Cliente" model="vm.TipoCliente" name="TipoCliente" track-by="item.ID"></captura-combo>
+                </div>
+
+            </div>
+            <input type="submit" value="" style="display: none">
+        </form>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div kendo-grid="vm.grid" k-options="vm.gridOptionsN"></div>
+
+            </div>
+        </div>

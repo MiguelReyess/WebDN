@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+       <h3>
+          Cuestionario de Store Check Exhibiciones
+       </h3>
+    </div>
+ </div>
+ 
+ <hr>
+ 
+ <!-- <div ng-repeat="datosCuestionario in datosCuestionario"> -->
+ <div class="row">
+    <div class="col-xs-5 text-right">Marca</div>
+    <div class="col-xs-7">{{ datosCuestionario.marca.Descripcion || 'N/D' }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Tipo de Exhibición</div>
+    <div class="col-xs-7">{{ datosCuestionario.TipoExhibicion.Descripcion || 'N/D' }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Ubicación</div>
+    <div class="col-xs-7">{{ datosCuestionario.Ubicacion.Descripcion || 'N/D' }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Visibilidad</div>
+    <div class="col-xs-7">{{ datosCuestionario.Visibilidad | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Disponibilidad</div>
+    <div class="col-xs-7">{{ datosCuestionario.Disponibilidad | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Precio Visible Vigente</div>
+    <div class="col-xs-7">{{ datosCuestionario.PrecioVisibleVigente | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Limpieza</div>
+    <div class="col-xs-7">{{ datosCuestionario.Limpieza | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Frenteo</div>
+    <div class="col-xs-7">{{ datosCuestionario.Frenteo | boolean }}</div>
+ </div>
+ <hr>
+ <div class="row">
+    <div class="col-xs-5 text-right">Evidencia</div>
+    <div class="col-xs-7">
+       <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+       <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+    </div>
+ </div>
+ <!-- </div> -->
+ 

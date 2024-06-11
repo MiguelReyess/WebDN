@@ -1,0 +1,115 @@
+<div ng-form="vm.formAltaMasiva">
+
+   <div class="row">
+
+      <div class="col-md-6 form-horizontal">
+
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Asignación</h3>
+            </div>
+            <div class="panel-body">
+               <captura-combo
+                  array="vm.gerentes"
+                  label="Gerente Canal"
+                  model="vm.gerente"
+                  required
+                  texto-opcion="item.NombreCompleto"
+                  track-by="item.ID"
+                  con-vacio="'Sin Asignar'"></captura-combo>
+
+               <captura-combo
+                  array="vm.asesores"
+                  label="Asesor Comercial"
+                  model="vm.asesor"
+                  required
+                  texto-opcion="item.NombreCompleto"
+                  track-by="item.ID"
+                  con-vacio="'Sin Asignar'"></captura-combo>
+
+               <captura-combo
+                  array="vm.kams"
+                  label="KAM"
+                  model="vm.kam"
+                  texto-opcion="item.NombreCompleto"
+                  track-by="item.ID"
+                  con-vacio="'Sin Asignar'"></captura-combo>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="col-sm-6 form-horizontal" style="">
+
+         <div class="panel panel-default" style="">
+
+            <div class="panel-heading">
+               <h3 class="panel-title">PDVs</h3>
+            </div>
+
+            <div class="panel-body">
+
+               <div class="row">
+                  <div class="col-xs-6">
+                     <button ngf-select="vm.cargarArchivo($file)" class="btn btn-primary btn-block">
+                        <i class="fa fa-file-excel-o"></i>
+                        Subir archivo Excel
+                        <i class="pull-right fa fa-spin fa-refresh" ng-show="cargandoArchivo"></i>
+                     </button>
+                     <i class="fa fa-warning text-danger" ng-show="vm.errores"></i>
+                  </div>
+               </div>
+
+               <div
+                  class="alert alert-warning margin-top-15"
+                  ng-show="vm.errores"
+                  style="max-height:210px; overflow-y:scroll;">
+                  <p>
+                     Los siguientes IDs no son reconocidos ({{ vm.errores.length }}):
+                  </p>
+                  <ul>
+                     <li ng-repeat="malo in vm.errores">{{ malo }}</li>
+                  </ul>
+               </div>
+
+               <div
+                  class="alert alert-info margin-top-15"
+                  ng-show="vm.buenos"
+                  style="max-height:210px; overflow-y:scroll;">
+                  <p>
+                     Se enviarán los siguientes PDVs ({{ vm.buenos.length }}):
+                     <button type="button" class="btn btn-danger btn-sm" ng-click="vm.buenos = null">
+                        Limpiar
+                     </button>
+                  </p>
+                  <ul>
+                     <li ng-repeat="bueno in vm.buenos">{{ bueno.Nombre }}
+                        -
+                        {{ bueno.NumeroTienda || 'Sin Número' }}</li>
+                  </ul>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+
+   <hr>
+
+   <div class="row">
+      <div class="col-md-offset-10 col-md-2">
+         <button
+            type="button"
+            class="btn btn-success btn-block"
+            ng-click="vm.guardar()"
+            ng-disabled="vm.formAltaMasiva.$invalid && !vm.buenos.length">
+            <i class="fa fa-save"></i>
+            Guardar
+         </button>
+      </div>
+   </div>
+
+</div>

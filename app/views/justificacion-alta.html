@@ -1,0 +1,178 @@
+<div class="row">
+	<div class="col-md-12 col-sm-12">
+		<div class="page-header">
+			<h2><small>Alta de Justificaciones</small></h2>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div ng-form="form">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label for="FechaInicio">Fecha Inicio:</label>
+						<div class="input-group">
+			            	<input ng-model="fechaInicio" type="text" name="FechaInicio" class="form-control"  ng-click="inicio_open = true" uib-datepicker-popup="dd/MMMM/yyyy" is-open="inicio_open">
+			            	<span class="input-group-btn">
+			                  <button type="button" class="btn btn-primary" ng-click="inicio_open = true">
+			                     <i class="fa fa-calendar"></i>
+			                  </button>
+			               </span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label for="FechaFin">Fecha Fin:</label>
+						<div class="input-group">
+			            	<input ng-model="fechaFin" type="text" name="FechaFin" class="form-control"  ng-click="fin_open = true" uib-datepicker-popup="dd/MMMM/yyyy" is-open="fin_open">
+			            	<span class="input-group-btn">
+			                  <button type="button" class="btn btn-primary" ng-click="fin_open = true">
+			                     <i class="fa fa-calendar"></i>
+			                  </button>
+			               </span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group" ng-class="{'has-success': form.Justificacion.$valid, 'has-error': form.Justificacion.$invalid}">
+						<label for="Justificacion">Motivo Justificación:</label>
+						<div class="input-group">
+								<select ng-model="tipoMotivoJustificacion" type="text" name="Justificacion" class="form-control" ng-options="d.DescCorta for d in   motivoJustificaciones" required="true">
+										<option value="">Selecciona una Justificación</option>
+								</select>
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.Justificacion.$valid, 'fa-times': form.Justificacion.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+
+					<div class="form-group" ng-class="{'has-success': frmUsuario.porRuta.$viewValue === true, 'has-error': frmUsuario.porRuta.$viewValue === false}">
+						<label class="control-label ">¿Por ruta?</label>
+						<div>
+							<div class="toggle-switch toggle-switch-success">
+									<label>
+										<input name="porRuta" ng-model="porRuta" type="checkbox">
+										<div class="toggle-switch-inner toggle-si-no"></div>
+										<div class="toggle-switch-switch">
+												<i class="fa fa-check"></i>
+										</div>
+									</label>
+							</div>
+						</div>
+				</div>
+			 </div>
+
+				<!-- <div class="col-md-3" ng-show="porRuta">
+					<div class="form-group" ng-class="{'has-success': form.rutas.$valid, 'has-error': form.rutas.$invalid}">
+						<label for="rutas">Rutas:</label>
+						<div class="input-group">
+									<select ng-model="rutaSeleccionada" type="text" name="rutas" class="form-control" ng-options="r.Nombre + ' - ' + r.DescCorta + ', ' + r.Descripcion for r in   rutas" ng-required="porRuta">
+											<option value="">Selecciona una ruta</option>
+									</select>
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.rutas.$valid, 'fa-times': form.rutas.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div> -->
+
+				<div class="col-md-3" ng-show="porRuta">
+					<div class="form-group"
+						ng-class="{'has-success': form.rutas.$valid, 'has-error': form.rutas.$invalid}">
+						<label for="rutas">Rutas:</label>
+						<div class="input-group"  auto-close="outsideClick">
+							<input ng-change="inputValidation()"  type="text" name="rutas" class="form-control" ng-required="porRuta" ng-model="nombreRutaSeleccionada" type="text" placeholder="Selecciona una ruta"  id="individualDrop" data-toggle="dropdown">
+
+								<ul style="overflow-y: scroll;min-height: 0.03px; max-height: 350px; min-width: 300px;" ng-show="rutas && rutas.length > 0" class="dropdown-menu" role="menu"
+									aria-labelledby="individualDrop">
+									<!-- <li>{{nombreRutaSeleccionada}}</li> -->
+									<li role="presentation" ng-repeat="r in rutas | filter: nombreRutaSeleccionada"><a
+											role="menuitem" ng-click="selectEntity(r,null)">{{r.Nombre + ' - ' + r.DescCorta
+											+ ', ' +
+											r.Descripcion}}</a></li>
+								</ul>
+							</input>
+							<span class="input-group-addon">
+								<span class="fa"
+									ng-class="{'fa-check': form.rutas.$valid, 'fa-times': form.rutas.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3" ng-show="!porRuta">
+					<div class="form-group" ng-class="{'has-success': form.PDV.$valid, 'has-error': form.PDV.$invalid}">
+						<label for="Justificacion">PDV:</label>
+						<div class="input-group">
+							<input ng-model="PDV" type="text" name="PDV" class="form-control" id="txtCliente" placeholder="Cliente" autocomplete="off" ng-model="clienteAgregar" typeahead-editable="false" uib-typeahead="cliente as (cliente.CodigoJDE.trim() + ' - ' + cliente.Nombre) for cliente in clientes | filter:filtroAgregarCliente | filter:$viewValue" ng-required="!porRuta">
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.PDV.$valid, 'fa-times': form.PDV.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-md-4">
+					<div class="form-group" ng-class="{'has-success': form.Usuarios.$valid, 'has-error': form.Usuarios.$invalid}">
+						<label for="Usuarios">Usuario:</label>
+						<div class="input-group">
+							<select type="text" name="Usuarios" class="form-control" ng-model="usuario" class="form-control" ng-options="(u.Nombre + ' ' + u.Nombre2 +' '+ u.ApellidoPaterno + ' ' + u.ApellidoMaterno) for u in usuariosAsignados" required="true" >
+								<option value="">Selecciona un Usuario</option>
+							</select>
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.Usuarios.$valid, 'fa-times': form.Usuarios.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div> -->
+
+				<div class="col-md-4">
+					<div class="form-group" ng-class="{'has-success': form.Usuarios.$valid, 'has-error': form.Usuarios.$invalid}">
+						<label for="Usuarios">Usuario:</label>
+						<div class="input-group" auto-close="outsideClick">
+							<input ng-change="inputValidation()" type="text" name="Usuarios" class="form-control" ng-required="true" ng-model="nombreUsuarioSeleccionado" type="text" placeholder="Selecciona una ruta" id="individualDrop" data-toggle="dropdown">
+								<ul style="overflow-y: scroll; min-height: 20px; max-height: 350px; min-width: 350px;"  ng-show="usuariosAsignados && usuariosAsignados.length > 0"  class="dropdown-menu" role="menu" aria-labelledby="individualDrop">
+									<!-- <li>{{nombreUsuarioSeleccionado}}</li> -->
+									<li role="presentation" ng-repeat="u in usuariosAsignados | filter: nombreUsuarioSeleccionado">
+										<a role="menuitem" ng-click="selectEntity(null,u)">{{u.Nombre + ' ' + u.Nombre2 +' '+ u.ApellidoPaterno + ' ' + u.ApellidoMaterno}}</a></li>
+								</ul>
+							</input>
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.Usuarios.$valid, 'fa-times': form.Usuarios.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group" ng-class="{'has-success': form.comentarios.$valid, 'has-error': form.comentarios.$invalid}">
+						<label for="Justificacion">Comentarios:</label>
+						<div class="input-group">
+							<textarea class="form-control" name="comentarios" style="max-width: 1289px;max-height: 50px;" rows="2" ng-model="comentarios" maxlength="100" required="true"></textarea>
+							<span class="input-group-addon">
+								<span class="fa" ng-class="{'fa-check': form.comentarios.$valid, 'fa-times': form.comentarios.$invalid}"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<button type="button" class="btn btn-sm btn-success btn-lg" ng-click="guardar()" ng-disabled="form.$invalid">
+			            Guardar
+			        </button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

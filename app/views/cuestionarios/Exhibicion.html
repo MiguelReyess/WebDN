@@ -1,0 +1,68 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Exhibición
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="exhibicion in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ exhibicion.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ exhibicion.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene exhibición</div>
+      <div class="col-xs-7">{{ exhibicion.TieneExhibicion | boolean }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tipo de exhibición propia</div>
+      <div class="col-xs-7">{{ exhibicion.TipoExhibicionPropia.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Ubicación de exhibición propia</div>
+      <div class="col-xs-7">{{ exhibicion.UbicacionExhibicionPropia.Descripcion }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Frentes disponibles al consumidor</div>
+      <div class="col-xs-7">{{ exhibicion.FrentesDisponibles | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(exhibicion.Evidencia) }}"/>
+         <span ng-hide="exhibicion.Evidencia">N/D</span>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-xs-5 text-right">Competencia</div>
+      <div class="col-xs-7"></div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene exhibición competencia</div>
+      <div class="col-xs-7">{{ exhibicion.TieneExhibicionCompetencia | boolean }}</div>
+   </div>
+
+   <div ng-show="exhibicion.TieneExhibicionCompetencia">
+      <div class="row">
+         <div class="col-xs-5 text-right">Tipo de exhibición competencia</div>
+         <div class="col-xs-7">{{ exhibicion.TipoExhibicionCompetencia.DescCorta }}</div>
+      </div>
+      <div class="row">
+         <div class="col-xs-5 text-right">Tipo de ubicación competencia</div>
+         <div class="col-xs-7">{{ exhibicion.UbicacionExhibicionCompetencia.Descripcion }}</div>
+      </div>
+      <div class="row">
+         <div class="col-xs-5 text-right">Frentes disponibles competencia</div>
+         <div class="col-xs-7">{{ exhibicion.FrentesDisponiblesCompetencia | number }}</div>
+      </div>
+   </div>
+
+</div>

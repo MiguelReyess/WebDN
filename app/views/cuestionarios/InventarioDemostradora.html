@@ -1,0 +1,41 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario Inventario Demostradora
+      </h3>
+   </div>
+</div>
+
+<hr>
+	
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio pieza</div>
+      <div class="col-xs-7">{{ producto.PrecioPieza }}</div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Precio oferta pieza</div>
+      <div class="col-xs-7">{{ producto.PrecioOfertaPieza }}</div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Inventario Inicial</div>
+      <div class="col-xs-7">{{ producto.InventarioInicial }}</div>
+  	</div>	
+
+  	<div class="row">
+      <div class="col-xs-5 text-right">Resurtido</div>
+      <div class="col-xs-7">{{ producto.Resurtido }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Inventario total</div>
+      <div class="col-xs-7">{{ producto.InventarioTotal }}</div>
+   	</div>

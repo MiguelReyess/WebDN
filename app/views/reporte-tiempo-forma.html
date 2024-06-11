@@ -1,0 +1,16 @@
+<div class="col-md-12" ng-form="formCodigos">
+    <div class="row">
+        <div class="col-sm-6 form-horizontal">
+            <captura-fecha required name="fechaInicio" label="Fecha Inicio" model="vm.fechaInicio" max="fechaFin" modelOptions="{allowInvalid: true}"></captura-fecha>
+            <captura-fecha required name="fechaFin" label="Fecha Fin" model="vm.fechaFin" min="fechaInicio" modelOptions="{allowInvalid: true}"></captura-fecha>
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-sm-6 text-right">
+          <button class="btn btn-primary" ng-click="vm.buscar()" ng-disabled="formCodigos.$invalid">
+            <span class="fa fa-search"></span>
+            Buscar
+         </button>
+       </div>
+    </div>
+</div>

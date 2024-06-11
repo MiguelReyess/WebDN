@@ -1,0 +1,34 @@
+<ul ng-show="opciones.length" class="nav main-menu">
+
+<li ng-repeat="opcion in opciones | filter:{EsOpcionMenu:true}">
+   <a href ng-if="opcion.Opciones.length" ng-click="expandido.ID = opcion.ID === expandido.ID ? 0 : opcion.ID">
+      <i ng-class="{'fa fa-caret-right':true}"></i>
+      <span>{{ opcion.TextoOpcion }}</span>
+   </a>
+
+   <ul ng-if="opcion.Opciones.length" class="submenu" uib-collapse="expandido.ID !== opcion.ID">
+      <li ng-repeat="opcion in opcion.Opciones">
+         <a class="ajax-link" ui-sref="{{ opcion.Detalle.NombreEstado }}" ui-sref-opts="{reload:true}">
+            <i ng-class="opcion.Detalle.Clases"></i>
+            <span>{{ opcion.TextoOpcion }}</span>
+         </a>
+      </li>
+   </ul>
+
+   <a ng-if="!opcion.Opciones.length" ui-sref="{{ opcion.Detalle.NombreEstado }}" class="ajax-link">
+      <i ng-class="opcion.Detalle.Clases"></i>
+      <span>
+         {{ opcion.TextoOpcion }}
+      </span>
+   </a>
+</li>
+
+</ul>
+
+<!-- Cuando no hay opciones  -->
+
+<ul ng-show="!opciones.length" class="nav main-menu">
+<li>
+   <a class="ajax-link">Sin Opciones para mostrar</a>
+</li>
+</ul>

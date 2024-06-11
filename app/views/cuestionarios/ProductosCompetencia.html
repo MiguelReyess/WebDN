@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>
+            Cuestionario de Productos Competencia
+        </h3>
+    </div>
+</div>
+
+<hr>
+
+<div ng-repeat="datosCuestionario in datosCuestionario">
+<div class="row">
+    <div class="col-xs-5 text-right">Producto</div>
+    <div class="col-xs-7">{{ datosCuestionario.Producto.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Existe actividad competencia?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ExisteActividadCompetencia | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Tipo Actividad Competencia</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.TipoActividadCompetencia.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta Con Demo En Tienda?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuentaConDemoTienda | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuantas demostradoras?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuentasDemostradoras | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta Con Canjes?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuentaConCanjes | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta Con Stand?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuentaConStand | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta con GIO en tienda?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuentaConGIO | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuantos GIO?</div>
+    <div class="col-xs-7">{{ datosCuestionario.ActividadCompetencia.CuantosGIO | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Evidencia de Actividad Competencia</div>
+    <div class="col-xs-7">
+       <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.EvidenciaActividadCompetencia) }}"/>
+       <span ng-hide="datosCuestionario.EvidenciaActividadCompetencia">N/D</span>
+    </div>
+ </div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes PDA</div>
+    <div class="col-xs-7">{{ datosCuestionario.FrentesPDA | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes Total Anaquel</div>
+    <div class="col-xs-7">{{ datosCuestionario.FrentesTotalesAnaquel | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Precio</div>
+    <div class="col-xs-7">{{ datosCuestionario.Precio | currency }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta con exhibición?</div>
+    <div class="col-xs-7">{{ datosCuestionario.TieneExhibicion | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Número de Exhibiciones</div>
+    <div class="col-xs-7">{{ datosCuestionario.CantidadExhibiciones | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Ubicación de exhibición propia</div>
+    <div class="col-xs-7">{{ datosCuestionario.UbicacionExhibicionPropia.Descripcion || 'N/D' }}</div>
+</div>
+<hr>
+<div ng-show="datosCuestionario.TieneExhibicion">
+    <div class="row">
+        <div class="col-xs-5 text-right">Tipo de exhibición</div>
+        <div class="col-xs-7">{{ datosCuestionario.TipoExhibicion.Descripcion }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5 text-right">Ubicación</div>
+        <div class="col-xs-7">{{ datosCuestionario.Ubicacion.Descripcion }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5 text-right">Evidencia</div>
+        <div class="col-xs-7">
+            <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}" />
+            <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+        </div>
+    </div>
+</div>
+<hr>
+</div>

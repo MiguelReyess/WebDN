@@ -1,0 +1,49 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Colocacion POP
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-xs-5 text-right">Existe Stopper</div>
+      <div class="col-xs-7">{{ producto.ExisteStopper | boolean }}</div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-xs-5 text-right">Existe Cenefa</div>
+      <div class="col-xs-7">{{ producto.ExisteCenefa | boolean }}</div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-xs-5 text-right">Existe Dangler</div>
+      <div class="col-xs-7">{{ producto.ExisteDangler | boolean }}</div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-xs-5 text-right">Cantidad de elementos colocados</div>
+      <div class="col-xs-7">{{ producto.CantidadElementosColocados | number }}</div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(producto.Evidencia) }}"/>
+         <span ng-hide="producto.Evidencia">N/D</span>
+      </div>
+   </div>
+   <hr>
+</div>

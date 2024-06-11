@@ -1,0 +1,53 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario Promoción Competencia Demostradora
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+	
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio Normal</div>
+      <div class="col-xs-7">{{ datosCuestionario.PrecioNormal }}</div>
+   </div>
+   		 
+   <div class="row">
+      <div class="col-xs-5 text-right">Precio Oferta</div>
+      <div class="col-xs-7">{{ datosCuestionario.Precio Oferta }}</div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Venta Diaria</div>
+      <div class="col-xs-7">{{ datosCuestionario.VentaDiaria}}</div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Tiene demostradora</div>
+      <div class="col-xs-7">{{ producto.TieneDemostradora | boolean }}</div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Activo recurso ragasa</div>
+      <div class="col-xs-7">{{ producto.ActivoRecursoRagasa.Descripcion || 'N/D' }}</div>
+   </div>
+
+      <div class="row">
+      <div class="col-xs-5 text-right">Tiene material pop</div>
+      <div class="col-xs-7">{{ producto.TieneMaterialPOP | boolean }}</div>
+   </div>
+
+    <div class="row">
+      <div class="col-xs-5 text-right">Cantidad Exhibiciones</div>
+      <div class="col-xs-7">{{ datosCuestionario.CantidadExhibiciones }}</div>
+   </div>
+
+
+

@@ -1,0 +1,25 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Negociación
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Se pudo negociar</div>
+   <div class="col-xs-7">{{ datosCuestionario.SePudoNegociar | boolean }}</div>
+</div>
+<div class="row" ng-if="!datosCuestionario.SePudoNegociar">
+   <div class="col-xs-5 text-right">Razón</div>
+   <div class="col-xs-7">{{ datosCuestionario.Razon }}</div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Exhibición Demostradora
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-if="datosCuestionario.ActivosRagasa.length">
+   <div class="row">
+      <div class="col-xs-5 text-right">Activo o Recurso Ragasa</div>
+      <div class="col-xs-7">
+         <span ng-repeat="activo in datosCuestionario.ActivosRagasa">{{ activo.Descripcion }}{{ $last ? '' : ', ' }}</span>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Logró Exhibición Adicional?</div>
+   <div class="col-xs-7">{{ datosCuestionario.LogroExhibicion ? 'Si' : 'No' }}</div>
+</div>
+<div ng-show="datosCuestionario.LogroExhibicion">
+   <div class="row">
+      <div class="col-xs-5 text-right">Cantidad Exhibiciones Logradas</div>
+      <div class="col-xs-7">{{ datosCuestionario.CantidadExhibicionesLogradas }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tipo de Exhibición</div>
+      <div class="col-xs-7">{{ datosCuestionario.TipoExhibicion.Descripcion }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Cantidad de Frentes en Exhibición</div>
+      <div class="col-xs-7">{{ datosCuestionario.CantidadFrentes | number }}</div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>

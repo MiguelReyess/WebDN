@@ -1,0 +1,66 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Store Check Merchandising Basico
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="datosCuestionario in datosCuestionario">
+<div class="row">
+   <div class="col-xs-5 text-right">Producto</div>
+   <div class="col-xs-7">{{ datosCuestionario.producto.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Alineación</div>
+   <div class="col-xs-7">{{ datosCuestionario.Alineacion | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Anaquel Cuadrado</div>
+   <div class="col-xs-7">{{ datosCuestionario.AnaquelCuadrado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Producto de Anaquel Disponible</div>
+   <div class="col-xs-7">{{ datosCuestionario.ProductoAnaquelDisponible | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Portafolio Catálogo PDV</div>
+   <div class="col-xs-7">{{ datosCuestionario.PortafolioCatalogoPDV | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Precio Visible</div>
+   <div class="col-xs-7">{{ datosCuestionario.PrecioVisible | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Precio Vigente</div>
+   <div class="col-xs-7">{{ datosCuestionario.PrecioVigente | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Limpieza</div>
+   <div class="col-xs-7">{{ datosCuestionario.Limpieza | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Rotación</div>
+   <div class="col-xs-7">{{ datosCuestionario.Rotacion | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}" />
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>
+<hr>
+<hr>
+</div>

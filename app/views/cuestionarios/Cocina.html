@@ -1,0 +1,54 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Cocina
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<!--
+TieneDepartamentoCocina: false,
+AceiteUtilizado: null,
+PorQue: null,
+NuestroAceiteBrinca: false,
+CadaCuandoCambiaAceite: null,
+Comentarios: null,
+Evidencia: null,
+-->
+
+<div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Tiene departamento de cocina</div>
+      <div class="col-xs-7">{{ datosCuestionario.TieneDepartamentoCocina | boolean }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Aceite utilizado</div>
+      <div class="col-xs-7">{{ datosCuestionario.AceiteUtilizado }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">¿Por qué?</div>
+      <div class="col-xs-7">{{ datosCuestionario.PorQue }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Nuestro aceite brinca</div>
+      <div class="col-xs-7">{{ datosCuestionario.NuestroAceiteBrinca | boolean  }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Cada cuando cambia aceite</div>
+      <div class="col-xs-7">{{ datosCuestionario.CadaCuandoCambiaAceite }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Comentarios</div>
+      <div class="col-xs-7">{{ datosCuestionario.Comentarios }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">Evidencia</div>
+      <div class="col-xs-7">
+         <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+         <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+      </div>
+   </div>
+
+</div>

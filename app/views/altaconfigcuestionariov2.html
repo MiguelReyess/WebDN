@@ -1,0 +1,163 @@
+<div class="col-sm-12">
+
+    <div class="row" ng-form="frmpdv">
+
+       <div class="col-sm-6 form-horizontal">
+
+          <captura-combo change="cambiaCuestionario()" required array="cuestionarios" texto-opcion="item.name" label="Cuestionario" model="configuracion.Cuestionario" name="cuestionario" track-by="item._id"></captura-combo>
+
+          <captura-combo required array="tiposCuestionario" texto-opcion="item.Nombre" track-by="item.ID" label="Tipo de Cuestionario" model="configuracion.TipoCuestionario" name="tipoCuestionario"></captura-combo>
+
+          <div class="form-group" ng-class="{'has-success': frmpdv.fechaInicio.$valid, 'has-error': frmpdv.fechaInicio.$invalid}">
+             <label class="control-label col-sm-4">Fecha Inicio</label>
+             <div class="col-sm-8">
+                <div class="input-group">
+                   <span class="input-group-btn">
+                      <button class="btn btn-default" ng-click="inicioAbierto = true">
+                         <span class="fa fa-calendar"></span>
+                      </button>
+                   </span>
+                   <input ng-click="inicioAbierto = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="inicioAbierto" class="form-control" name="fechaInicio" ng-model="configuracion.FechaInicio" type="text" required>
+                   <span class="input-group-addon">
+                      <span class="fa" ng-class="{'fa-check': frmpdv.fechaInicio.$valid, 'fa-times': frmpdv.fechaInicio.$invalid}"></span>
+                   </span>
+                </div>
+             </div>
+          </div>
+
+          <div class="form-group" ng-class="{'has-success': frmpdv.fechaFin.$valid, 'has-error': frmpdv.fechaFin.$invalid}">
+             <label class="control-label col-sm-4">Fecha Fin</label>
+             <div class="col-sm-8">
+                <div class="input-group">
+                   <span class="input-group-btn">
+                      <button class="btn btn-default" ng-click="finAbierto = true">
+                         <span class="fa fa-calendar"></span>
+                      </button>
+                   </span>
+                   <input fecha-minima="configuracion.FechaInicio" min-date="configuracion.FechaInicio" ng-click="finAbierto = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="finAbierto" class="form-control" name="fechaFin" ng-model="configuracion.FechaFin" type="text" required>
+                   <span class="input-group-addon">
+                      <span class="fa" ng-class="{'fa-check': frmpdv.fechaFin.$valid, 'fa-times': frmpdv.fechaFin.$invalid}"></span>
+                   </span>
+                </div>
+             </div>
+          </div>
+
+          <div class="form-group" ng-class="{'has-success': frmpdv.fechaTermino.$valid, 'has-error': frmpdv.fechaTermino.$invalid}">
+             <label class="control-label col-sm-4">Fecha Término</label>
+             <div class="col-sm-8">
+                <div class="input-group">
+                   <span class="input-group-btn">
+                      <button class="btn btn-default" ng-click="terminoAbierto = true">
+                         <span class="fa fa-calendar"></span>
+                      </button>
+                   </span>
+                   <input fecha-minima="configuracion.FechaFin" min-date="configuracion.FechaFin" ng-click="terminoAbierto = true" uib-datepicker-popup="dd-MMMM-yyyy" is-open="terminoAbierto" class="form-control" name="fechaTermino" ng-model="configuracion.FechaTermino" type="text" required>
+                   <span class="input-group-addon">
+                      <span class="fa" ng-class="{'fa-check': frmpdv.fechaTermino.$valid, 'fa-times': frmpdv.fechaTermino.$invalid}"></span>
+                   </span>
+                </div>
+             </div>
+          </div>
+
+          <captura-texto label="Título" model="configuracion.Titulo" name="titulo"></captura-texto>
+          <captura-texto label="Descripción Corta" model="configuracion.DescCorta" name="descCorta"></captura-texto>
+
+          <captura-texto label="Código" model="configuracion.Codigo" name="codigo"></captura-texto>
+
+          <captura-texto label="Orden" model="configuracion.Orden" type="number" name="orden"></captura-texto>
+
+          <div class="form-group" ng-class="{'has-success': configuracion.PuestosAplica.length, 'has-error': !configuracion.PuestosAplica.length}">
+             <label class="control-label col-sm-4">Puestos que aplica</label>
+             <div class="col-sm-8">
+                <div class="input-group">
+                   <div class="form-control" style="height: initial;">
+                      <div class="checkbox" ng-repeat="puesto in nuevosPuestos">
+                         <label>
+                            <input class="form-control" type="checkbox" checklist-model="configuracion.PuestosAplica" checklist-value="puesto">
+                            {{ puesto.Descripcion === 'Asesor Comercial'? 'Ejecutivo':puesto.Descripcion == 'Gerente Canal'? 'Staff':puesto.Descripcion == 'OPV'? 'Supervisor':puesto.Descripcion  }}
+                            <i class="fa fa-square-o"></i>
+                         </label>
+                      </div>
+                   </div>
+                   <span class="input-group-addon">
+                      <span class="fa" ng-class="{'fa-check': configuracion.PuestosAplica.length, 'fa-times': !configuracion.PuestosAplica.length}"></span>
+                   </span>
+                </div>
+             </div>
+          </div>
+
+       </div>
+
+       <div class="col-sm-6 form-horizontal" style="">
+
+          <h4>PDVs</h4>
+
+          <div class="panel panel-default" style="">
+
+             <div class="panel-body">
+
+                <div class="row">
+                   <div class="col-xs-6">
+                      <button ngf-select="cargarArchivo($file)" class="btn btn-primary btn-block">
+                         <i class="fa fa-file-excel-o"></i> Subir archivo CSV
+                         <i class="pull-right fa fa-spin fa-refresh" ng-show="cargandoArchivo"></i>
+                      </button>
+                      <i class="fa fa-warning text-danger" ng-show="malos || repetidos"></i>
+                   </div>
+                   <div class="col-xs-6">
+                      <selector-cliente on-seleccionado="seleccionaIDs(pdv)" seleccion-multiple="true">
+                         <button class="btn btn-primary btn-block" ng-click="abrir()">
+                            <i class="fa fa-search"></i> Buscar
+                         </button>
+                      </selector-cliente>
+                   </div>
+                </div>
+
+                <div class="alert alert-warning margin-top-15" ng-show="malos" style="max-height:210px; overflow-y:scroll;">
+                   <p>
+                      Los siguientes IDs no son reconocidos ({{ malos.length }}):
+                   </p>
+                   <ul>
+                      <li ng-repeat="malo in malos">{{ malo }}</li>
+                   </ul>
+                </div>
+
+                <div class="alert alert-info margin-top-15" ng-show="buenos" style="max-height:210px; overflow-y:scroll;">
+                   <p>
+                      Se enviarán los siguientes PDVs ({{ buenos.length }}):
+                      <button type="button" class="btn btn-danger btn-sm" ng-click="buenos = null">
+                        Limpiar
+                      </button>
+                   </p>
+                   <ul>
+                      <li ng-repeat="bueno in buenos">{{ bueno }}</li>
+                   </ul>
+                </div>
+
+                <div class="alert alert-warning margin-top-15" ng-show="repetidos" style="max-height:210px; overflow-y:scroll;">
+                   <p>
+                      Los siguientes IDs están repetidos, favor de verificar: ({{ repetidos.length }}):
+                   </p>
+                   <ul>
+                      <li ng-repeat="repetidos in repetidos">{{ repetidos }}</li>
+                   </ul>
+                </div>
+
+             </div>
+
+          </div>
+
+       </div>
+
+    </div>
+
+    <div class="row">
+       <div class="col-sm-2 col-sm-offset-8">
+          <button class="btn btn-default btn-block pull-right" ng-click="limpiar()">Limpiar</button>
+       </div>
+       <div class="col-sm-2">
+          <button class="btn btn-success btn-block pull-right" ng-click="guardar()" ng-disabled="!frmpdv.$valid || !configuracion.PuestosAplica.length || !buenos">Guardar</button>
+       </div>
+    </div>
+
+ </div>

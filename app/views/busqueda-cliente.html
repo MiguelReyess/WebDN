@@ -1,0 +1,45 @@
+<div>
+   <form class="form-horizontal" name="vm.busqueda" ng-submit="vm.buscar()">
+      <div class="row">
+
+         <div class="col-sm-6">
+            <captura-texto label="Código SIC" type="number" model="vm.id" name="id" autofocus></captura-texto>
+            <captura-texto label="Código JDE" type="number" model="vm.codigojde" name="codigojde"></captura-texto>
+            <captura-texto label="Nombre" model="vm.nombre" name="nombre"></captura-texto>
+            <captura-combo con-vacio="'Todos'" array="vm.cadenas" texto-opcion="item.Nombre" label="Cadena"
+               model="vm.cadena" name="cadena" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.estados" change="vm.cambiaEstado()" texto-opcion="item.Nombre"
+               label="Estado" model="vm.estado" name="estado" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.municipios" texto-opcion="item.Nombre" label="Ciudad"
+               model="vm.municipio" name="municipio" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.asesores" texto-opcion="item.Label"
+               label="Asesor" model="vm.asesor" name="asesor" track-by="item.ID"></captura-combo>
+         </div>
+
+         <div class="col-sm-6">
+            <captura-combo con-vacio="'Todos'" array="vm.zonas" texto-opcion="item.Label" label="Zona"
+               model="vm.zona" name="zona" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.gruposcanales" texto-opcion="item.Nombre" label="Grupo Canal"
+               model="vm.grupocanal" name="grupocanal" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.grupocanal.Canales" texto-opcion="item.Nombre"
+               label="Canal" model="vm.canal" name="canal" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.canal.TiposPDV" texto-opcion="item.Nombre" label="Tipo PDV"
+               model="vm.tipopdv" name="tipopdv" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.tipopdv.SegmentosPDV" texto-opcion="item.Nombre"
+               label="Segmento PDV" model="vm.segmentopdv" name="segmentopdv" track-by="item.ID"></captura-combo>
+            <captura-combo con-vacio="'Todos'" array="vm.canal.TiposCliente" texto-opcion="item.Nombre"
+               label="Tipo de Cliente" model="vm.tipocliente" name="tipocliente" track-by="item.ID"></captura-combo>
+         </div>
+
+      </div>
+      <input type="submit" value="" style="display: none">
+   </form>
+
+   <hr>
+
+   <div class="row">
+      <div class="col-md-12">
+         <div kendo-grid="vm.grid" k-options="vm.gridOptions"></div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>
+            Cuestionario de Productos Ragasa
+        </h3>
+    </div>
+</div>
+
+<hr>
+
+<div ng-repeat="datosCuestionario in datosCuestionario">
+<div class="row">
+    <div class="col-xs-5 text-right">Producto</div>
+    <div class="col-xs-7">{{ datosCuestionario.Producto.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes PDA</div>
+    <div class="col-xs-7">{{ datosCuestionario.FrentesPDA | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes Total Anaquel</div>
+    <div class="col-xs-7">{{ datosCuestionario.FrentesTotalesAnaquel | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Precio</div>
+    <div class="col-xs-7">{{ datosCuestionario.Precio | currency }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Cuenta con exhibición?</div>
+    <div class="col-xs-7">{{ datosCuestionario.CuentaConExhibicion | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Número de Exhibiciones</div>
+    <div class="col-xs-7">{{ datosCuestionario.NumeroDeExhibiciones | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Tipo de exhibición</div>
+    <div class="col-xs-7">{{ datosCuestionario.Exhibicion.TipoExhibicion.Descripcion }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Ubicación</div>
+    <div class="col-xs-7">{{ datosCuestionario.Exhibicion.Ubicacion.Descripcion }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Evidencia</div>
+    <div class="col-xs-7">
+        <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}" />
+        <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+    </div>
+</div>
+<hr>
+<hr>
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Control de Inventarios
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="producto in datosCuestionario">
+   <div class="row">
+      <div class="col-xs-5 text-right">Producto</div>
+      <div class="col-xs-7">{{ producto.Producto.DescCorta }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right">SKU</div>
+      <div class="col-xs-7">{{ producto.Producto.SKU }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right"></div>
+      <div class="col-xs-7">{{ producto.InventarioTotalCajas | number }}</div>
+   </div>
+   <div class="row">
+      <div class="col-xs-5 text-right"></div>
+      <div class="col-xs-7">{{ producto.CantidadCajasRecibidas | number }}</div>
+   </div>
+   <hr ng-if="!$last">
+</div>

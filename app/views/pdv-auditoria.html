@@ -1,0 +1,82 @@
+<div class="col-sm-12">
+
+   <div class="alert alert-danger" role="alert" ng-if="vm.pdv.MotivoRechazo.length > 0">
+      <b>Motivo de Rechazo -
+      </b>
+      <span ng-bind="vm.pdv.MotivoRechazo"></span>
+   </div>
+
+   <div class="row" ng-form="frmpdv">
+
+      <div class="col-sm-6 form-horizontal">
+
+         <campo-estatico label="'Cadena'" valor="vm.pdv.Cadena.Nombre"></campo-estatico>
+         <campo-estatico label="'Numero de Tienda'" valor="vm.pdv.NumeroTienda"></campo-estatico>
+         <campo-estatico label="'Cliente Facturable'" valor="vm.pdv.ClienteFacturable.Nombre"></campo-estatico>
+         <campo-estatico label="'Nombre'" valor="vm.pdv.Nombre"></campo-estatico>
+         <campo-estatico label="'Dirección'" valor="vm.pdv.Direccion"></campo-estatico>
+         <campo-estatico label="'Número Exterior'" valor="vm.pdv.Numero"></campo-estatico>
+         <campo-estatico label="'Número Interior'" valor="vm.pdv.NumeroInterior"></campo-estatico>
+         <campo-estatico label="'País'" valor="vm.pdv.Pais.Nombre"></campo-estatico>
+         <campo-estatico label="'Estado'" valor="vm.pdv.Estado.Nombre"></campo-estatico>
+         <campo-estatico label="'Ciudad'" valor="vm.pdv.Municipio.Nombre"></campo-estatico>
+         <campo-estatico label="'Zona Nielsen'" valor="vm.pdv.Municipio.ZonaNIELSEN"></campo-estatico>
+         <campo-estatico label="'Zona ISCAM'" valor="vm.pdv.Municipio.ZonaISCAM"></campo-estatico>
+         <campo-estatico label="'Colonia'" valor="vm.pdv.Colonia"></campo-estatico>
+         <campo-estatico label="'Código Postal'" valor="vm.pdv.CodigoPostal"></campo-estatico>
+         <campo-estatico label="'Teléfono'" valor="vm.pdv.Telefono"></campo-estatico>
+         <campo-estatico label="'Email'" valor="vm.pdv.Email"></campo-estatico>
+         <campo-estatico label="'Asesor'" valor="vm.pdv.AsesorComercial.Nombre"></campo-estatico>
+
+      </div>
+
+      <div class="col-sm-6 form-horizontal">
+
+         <campo-estatico label="'Grupo Canal'" valor="vm.pdv.GrupoCanal.Nombre"></campo-estatico>
+         <campo-estatico label="'Canal'" valor="vm.pdv.Canal.Nombre"></campo-estatico>
+         <campo-estatico label="'Tipo de PDV'" valor="vm.pdv.TipoPDV.Nombre"></campo-estatico>
+         <campo-estatico label="'Segmento PDV'" valor="vm.pdv.SegmentoPDV.Nombre"></campo-estatico>
+         <campo-estatico label="'Tipo de Cliente'" valor="vm.pdv.TipoCliente.Nombre"></campo-estatico>
+
+         <hr>
+
+         <campo-estatico label="'Zona'" valor="vm.pdv.Zona.Nombre"></campo-estatico>
+         <campo-estatico label="'Latitud'" valor="vm.pdv.Latitud"></campo-estatico>
+         <campo-estatico label="'Longitud'" valor="vm.pdv.Longitud"></campo-estatico>
+
+         <hr>
+
+         <campo-estatico label="'Nombre Contacto'" valor="vm.pdv.NombreContacto"></campo-estatico>
+         <campo-estatico label="'Apellido Paterno'" valor="vm.pdv.Apellido1Contacto"></campo-estatico>
+         <campo-estatico label="'Apellido Materno'" valor="vm.pdv.Apellido2Contacto"></campo-estatico>
+         <campo-estatico label="'Teléfono'" valor="vm.pdv.TelefonoContacto"></campo-estatico>
+         <campo-estatico label="'Email'" valor="vm.pdv.EmailContacto"></campo-estatico>
+         <campo-estatico label="'UT'" valor="vm.pdv.UT"></campo-estatico>
+
+      </div>
+
+   </div>
+
+   <hr/>
+
+   <div class="row">
+      <div class="col-sm-4">
+         <!-- Filler -->
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-danger btn-block" ng-click="vm.eliminar()">
+            <i class="fa fa-trash-o"></i>
+            Eliminar</button>
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-danger btn-block" ng-click="vm.rechazar()">Rechazar</button>
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-primary btn-block" ng-click="vm.editar()">Editar</button>
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-success btn-block" ng-click="vm.validar()">Validar</button>
+      </div>
+   </div>
+
+</div>

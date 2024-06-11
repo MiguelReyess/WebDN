@@ -1,0 +1,11 @@
+<div class="col-md-12">
+   <div class="row">
+      <div class="col-md-12">
+         <h4>Viendo codigos con fecha de inicio desde {{ vm.fechaInicio | formatoMoment }} hasta {{ vm.fechaFin | formatoMoment }}</h4>
+      </div>
+   </div>
+   <hr>
+   <div style="overflow-x: scroll;">
+      <div kendo-grid id="grid"></div>
+   </div>
+</div>

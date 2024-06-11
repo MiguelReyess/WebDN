@@ -1,0 +1,245 @@
+<div class="col-sm-12">
+
+   <div class="alert alert-danger" role="alert" ng-if="vm.pdv.MotivoRechazo.length > 0">
+      <b>Motivo de Rechazo -
+      </b>
+      <span ng-bind="vm.pdv.MotivoRechazo"></span>
+   </div>
+
+   <div class="row" ng-if="'pdv-editar' | isState">
+      <div class="col-md-2">
+         <selector-cliente on-seleccionado="vm.seleccionado(pdv)">
+            <button type="button" class="btn btn-primary" ng-click="abrir()">
+               Seleccionar PDV
+            </button>
+         </selector-cliente>
+      </div>
+      <div class="col-md-10">
+         <h3 ng-show="vm.pdv.Nombre" ng-bind-template="{{vm.pdv.ID}} - {{vm.pdv.Nombre}}"></h3>
+      </div>
+   </div>
+
+   <br ng-if="'pdv-editar' | isState">
+
+   <div class="row" ng-form="vm.frmpdv" ng-if="vm.pdv">
+
+      <div class="col-sm-6 form-horizontal">
+
+         <captura-combo ng-required="true" array="vm.Cadenas" label="Cadena" model="vm.pdv.Cadena" texto-opcion="item.Nombre"
+            track-by="item.ID"></captura-combo>
+
+         <captura-texto ng-required="true" label="Número de Tienda" model="vm.pdv.NumeroTienda" name="numerotienda"
+            type="number"></captura-texto>
+
+         <div class="form-group has-success">
+            <label class="control-label col-sm-4">Cliente Facturable</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <span class="input-group-btn">
+                     <selector-cliente modelo="vm.pdv.ClienteFacturable" class="btn-group">
+                        <span class="btn btn-default" ng-click="abrir()">
+                           <i class="fa fa-search"></i>
+                        </span>
+                     </selector-cliente>
+                  </span>
+                  <input readonly class="form-control" name="clienteFacturable"
+                     ng-value="vm.pdv.ClienteFacturable.Nombre" type="text" ng-required="true">
+                  <span class="input-group-addon">
+                     <span class="fa fa-fw fa-check"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <captura-texto ng-required="true" label="Nombre" model="vm.pdv.Nombre" name="nombre"></captura-texto>
+         <captura-texto ng-required="true" label="Calle" model="vm.pdv.Direccion" name="Direccion"></captura-texto>
+         <captura-texto ng-required="true" label="Número Exterior" maxlength="50" model="vm.pdv.Numero"
+            name="numeroExterior"></captura-texto>
+         <captura-texto label="Número Interior" maxlength="50" model="vm.pdv.NumeroInterior"
+            name="numeroInterior"></captura-texto>
+
+         <captura-combo ng-required="true" array="vm.Paises" label="País" model="vm.pdv.Pais" texto-opcion="item.Nombre" track-by="item.ID"
+            change="vm.cambiaPais()"></captura-combo>
+         <captura-combo ng-required="true" array="vm.Estados" label="Estado" model="vm.pdv.Estado" texto-opcion="item.Nombre"
+            track-by="item.ID" change="vm.cambiaEstado()"></captura-combo>
+         <captura-combo ng-required="true" array="vm.Municipios" label="Ciudad" model="vm.pdv.Municipio" texto-opcion="item.Nombre"
+            track-by="item.ID"></captura-combo>
+
+         <div class="form-group has-success">
+            <label class="control-label col-sm-4">Zona Nielsen</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" name="zonanielsen" ng-model="vm.pdv.Municipio.ZonaNIELSEN" readonly
+                     type="text">
+                  <span class="input-group-addon">
+                     <span class="fa fa-fw fa-check"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-group has-success">
+            <label class="control-label col-sm-4">Zona ISCAM</label>
+            <div class="col-sm-8">
+               <div class="input-group">
+                  <input class="form-control" name="zonaiscam" ng-model="vm.pdv.Municipio.ZonaISCAM" readonly
+                     type="text">
+                  <span class="input-group-addon">
+                     <span class="fa fa-fw fa-check"></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+
+         <captura-texto ng-required="true" label="Colonia" maxlength="50" model="vm.pdv.Colonia" name="colonia"></captura-texto>
+         <captura-texto ng-required="true" label="Código Postal" maxlength="5" model="vm.pdv.CP" name="codigoPostal"
+            type="number"></captura-texto>
+         <captura-texto label="Teléfono" maxlength="15" model="vm.pdv.Telefono" name="telefono"
+            pattern="[-()0-9 ]*"></captura-texto>
+         <captura-texto label="Email de PDV" model="vm.pdv.Email" name="Email"></captura-texto>
+
+         <div class="form-group" ng-if="'alta-pdv' | isState">
+            <label class="control-label col-sm-4">
+            </label>
+            <div class="col-sm-8">
+               <div ng-if="jerarquiaEmpleados.length">
+                  <div ng-repeat="(key, empleado) in jerarquiaEmpleados" class="empleado"
+                     ng-class="{'empleado-jefe': empleado.level > empleadoActual.level, 'empleado-6': empleado.level === 6}">
+                     <input type="checkbox" ng-model="selected[empleado['ID']]"
+                        ng-change="toggleAll(empleado, selected[empleado['ID']])"
+                        ng-class="{'checked': empleado.level > empleadoActual.level}" ng-disabled="empleadoActual.level"
+                        ng-checked="selected[empleado['ID']]">
+                     {{empleado.Nombre + ' ' + empleado.ApellidoPaterno + ' ' + empleado.ApellidoMaterno}}
+                     <b>({{empleado.PuestoDescripcion}})</b>
+                  </div>
+               </div>
+               <div ng-if="jerarquiaEmpleadosTodos.length">
+                  <div ng-repeat="(key, empleado) in jerarquiaEmpleadosTodos" class="empleado"
+                     ng-class="{'empleado-jefe': empleado.level > empleadoActual.level, 'empleado-6': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 6, 'empleado-5': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 5, 'empleado-4': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 4, 'empleado-3': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 3,'empleado-2': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 2,'empleado-1': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 1,'empleado-0': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 0}">
+                     <input type="checkbox" ng-model="selected[empleado['ID']]"
+                        ng-change="toggleAll(empleado, selected[empleado['ID']])"
+                        ng-class="{'checked': empleado.level > empleadoActual.level}"
+                        ng-checked="selected[empleado['ID']]"
+                        ng-disabled="isDisabled(empleado)">
+                     {{ empleado.ID + ' ' + empleado.Nombre + ' ' + empleado.ApellidoPaterno + ' ' + empleado.ApellidoMaterno}}
+                     ({{empleado.PuestoDescripcion}})
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- 
+         <captura-combo array="vm.Asesores" label={{vm.pdv.AsesorComercial.Puesto.Descripcion}}
+            model="vm.pdv.AsesorComercial" texto-opcion="item.Label" track-by="item.ID"
+            ng-if="'pdv-editar' | isState"></captura-combo> -->
+
+         <div class="form-group" ng-if="'pdv-editar' | isState">
+            <!-- <label class="control-label col-sm-4"></label>
+            <div class="col-sm-8">
+               <div ng-if="jerarquiaEmpleados.length">
+                  <div ng-repeat="(key, empleado) in jerarquiaEmpleados"
+                  class="empleado"
+                     ng-class="{'empleado-jefe': empleado.level > empleadoActual.level, 'empleado-6': empleado.level === 6}">
+                     <input type="checkbox" ng-model="selected[empleado['ID']]"
+                        ng-change="toggleAll(empleado, selected[empleado['ID']])" ng-class="{'checked': empleado.level > empleadoActual.level}" ng-disabled="empleado.level"
+                        ng-checked="selected[empleado['ID']]">
+
+                     {{empleado.Nombre + ' ' + empleado.ApellidoPaterno + ' ' + empleado.ApellidoMaterno}} <b> ({{empleado.PuestoDescripcion}}) </b>
+                     
+                  </div>
+               </div>
+            </div> -->
+             <label class="control-label col-sm-4">
+            </label>
+            <div class="col-sm-8">
+               <div ng-if="jerarquiaEmpleados.length">
+                  <div ng-repeat="(key, empleado) in jerarquiaEmpleados" class="empleado"
+                     ng-class="{'empleado-jefe': empleado.level > empleadoActual.level, 'empleado-6': empleado.level === 6}">
+                     <input type="checkbox" ng-model="selected[empleado['ID']]"
+                        ng-change="toggleAll(empleado, selected[empleado['ID']])"
+                        ng-class="{'checked': empleado.level > empleadoActual.level}" ng-disabled="empleadoActual.level"
+                        ng-checked="selected[empleado['ID']]">
+                     {{empleado.Nombre + ' ' + empleado.ApellidoPaterno + ' ' + empleado.ApellidoMaterno}}
+                     <b>({{empleado.PuestoDescripcion}})</b>
+                  </div>
+               </div>
+               <div ng-if="jerarquiaEmpleadosTodos.length">
+                  <div ng-repeat="(key, empleado) in jerarquiaEmpleadosTodos" class="empleado"
+                     ng-class="{'empleado-jefe': empleado.level > empleadoActual.level, 'empleado-6': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 6, 'empleado-5': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 5, 'empleado-4': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 4, 'empleado-3': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 3,'empleado-2': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 2,'empleado-1': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 1,'empleado-0': obtenerJerarquiaPorPuestoDescripcion(empleado.PuestoDescripcion) == 0}">
+                     <input type="checkbox" ng-model="selected[empleado['ID']]"
+                        ng-change="toggleAll(empleado, selected[empleado['ID']])"
+                        ng-class="{'checked': empleado.level > empleadoActual.level}"
+                        ng-checked="selected[empleado['ID']]"
+                        ng-disabled="isDisabled(empleado)">
+                     {{ empleado.ID + ' ' + empleado.Nombre + ' ' + empleado.ApellidoPaterno + ' ' + empleado.ApellidoMaterno}}
+                     ({{empleado.PuestoDescripcion}})
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+
+
+      <div class="col-sm-6 form-horizontal">
+
+         <captura-combo ng-required="true" array="vm.GruposCanales" texto-opcion="item.Nombre" label="Grupo Canal"
+            model="vm.pdv.GrupoCanal" name="GrupoCanal" track-by="item.ID"></captura-combo>
+         <captura-combo ng-required="true" array="vm.pdv.GrupoCanal.Canales" texto-opcion="item.Nombre" label="Canal" model="vm.pdv.Canal"
+            name="canal" track-by="item.ID"></captura-combo>
+         <captura-combo ng-required="true" array="vm.pdv.Canal.TiposPDV" texto-opcion="item.Nombre" label="Tipo de PDV"
+            model="vm.pdv.TipoPDV" name="tipoPDV" track-by="item.ID"></captura-combo>
+         <captura-combo ng-required="true" array="vm.pdv.TipoPDV.SegmentosPDV" texto-opcion="item.Nombre" label="Segmento PDV"
+            model="vm.pdv.SegmentoPDV" name="segmentoPDV" track-by="item.ID"></captura-combo>
+         <captura-combo ng-required="true" array="vm.pdv.Canal.TiposCliente" texto-opcion="item.Nombre" label="Tipo de Cliente"
+            model="vm.pdv.TipoCliente" name="tipoCliente" track-by="item.ID"></captura-combo>
+         <hr>
+         <captura-combo ng-required="true" array="vm.Zonas" texto-opcion="item.Nombre" label="Zona" model="vm.pdv.Zona" name="zona"
+            track-by="item.ID"></captura-combo>
+         <captura-texto ng-required="true" label="Latitud" maxlength="12" model="vm.pdv.Latitud" name="latitud"
+            type="number"></captura-texto>
+         <captura-texto ng-required="true" label="Longitud" maxlength="12" model="vm.pdv.Longitud" name="longitud"
+            type="number"></captura-texto>
+         <hr>
+         <h4>Datos de Contacto</h4>
+         <captura-texto label="Nombre" model="vm.pdv.NombreContacto" name="NombreContacto"></captura-texto>
+         <captura-texto label="Apellido Paterno" model="vm.pdv.Apellido1Contacto"
+            name="Apellido1Contacto"></captura-texto>
+         <captura-texto label="Apellido Materno" model="vm.pdv.Apellido2Contacto"
+            name="Apellido2Contacto"></captura-texto>
+         <captura-texto label="Teléfono" model="vm.pdv.TelefonoContacto" name="TelefonoContacto"></captura-texto>
+         <captura-texto label="Email" model="vm.pdv.EmailContacto" name="EmailContacto"></captura-texto>
+         <captura-texto label="UT" model="vm.pdv.UT" name="UT" type="number"></captura-texto>
+      </div>
+
+   </div>
+
+   <hr />
+
+   <div class="row">
+      <div class="col-sm-6">
+         <!-- Filler -->
+      </div>
+      <div class="col-sm-2">
+         <button ng-if="'pdv-auditar.editar' | isState" class="btn btn-danger btn-block" ng-click="vm.eliminar()"
+            ng-disabled="!vm.frmpdv.$valid || !vm.pdv">
+            <i class="fa fa-trash-o"></i>
+            Eliminar
+         </button>
+      </div>
+      <div class="col-sm-2">
+         <button ng-if="'pdv-auditar.editar' | isState" class="btn btn-danger btn-block" ng-click="vm.rechazar()"
+            ng-disabled="!vm.frmpdv.$valid ">
+            Rechazar
+         </button>
+      </div>
+      <div class="col-sm-2">
+         <button class="btn btn-success btn-block" ng-click="vm.guardarPDV()"
+            ng-disabled="!vm.frmpdv.$valid || !vm.pdv || !asesor">
+            <span ng-if="!('pdv-auditar.editar' | isState)">Guardar</span>
+            <span ng-if="'pdv-auditar.editar' | isState">Validar</span>
+         </button>
+      </div>
+   </div>
+
+</div>

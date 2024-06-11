@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>
+            Cuestionario de Store Check Planograma
+        </h3>
+    </div>
+</div>
+
+<hr>
+
+<div ng-repeat="datosCuestionario in datosCuestionario">
+<div class="row">
+    <div class="col-xs-5 text-right">Producto</div>
+    <div class="col-xs-7">{{ datosCuestionario.producto.DescCorta || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">¿Respeta planograma?</div>
+    <div class="col-xs-7">{{ datosCuestionario.RespetaPlanograma | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes En Planograma</div>
+    <div class="col-xs-7">{{ datosCuestionario.FrentesPlanograma | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Frentes</div>
+    <div class="col-xs-7">{{ datosCuestionario.Frentes | number }}</div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-5 text-right">Evidencia</div>
+    <div class="col-xs-7">
+        <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}" />
+        <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+    </div>
+</div>
+<hr>
+<hr>
+</div>

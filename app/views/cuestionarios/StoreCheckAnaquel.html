@@ -1,0 +1,44 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Store Check Anaquel
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Esta abastecido el anaquel al menos en un 70%</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsAbastecido | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El producto esta cuadrado de acuerdo a planograma</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsCuadrado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Se encontró producto con alguna falla de caducidad</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsFallaCaducidad | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El producto se encuentra frenteado y tiene la rotación según el estándar</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsFrenteado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El anaquel cuenta con material POP</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsMaterialPOP | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Se cuenta con precios exhibidos y vigentes en anaquel</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsPrecioVigente | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Nuestros productos están sobre charolas o tramos limpios</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsTramoLimpio | boolean }}</div>
+</div>

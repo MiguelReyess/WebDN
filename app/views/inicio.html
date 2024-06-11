@@ -1,0 +1,280 @@
+
+<div class="row" >
+  
+    <div class="col-md-12 col-lg-12" >
+     
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h5 class="panel-title">
+                    Indicadores Globales
+                    <button class="btn btn-primary btn-xs pull-right" ng-click="updateInformacionRuta()">
+                        <span class="fa fa-refresh"></span>
+                    </button>
+                </h5>
+            </div>            
+
+<!--             
+            <div>
+                <div class="row row-flex margin-top-10 margin-bottom-10">
+                    <div class="col-md-4 text-center">
+                        <button class="btn btn-primary btn-block" type="button">
+                            Rutas Programadas <span class="badge">{{InformacionGeneral.RutasProgramadas ? InformacionGeneral.RutasProgramadas : 0 | number:0}}</span>
+                        </button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button class="btn btn-primary btn-block" type="button">
+                            Rutas Conectadas <span class="badge">{{InformacionGeneral.RutasConectadas ? InformacionGeneral.RutasConectadas : 0 | number:0 }}</span>
+                        </button>            
+                    </div>      
+                    <div class="col-md-4 text-center">
+                        <button class="btn btn-primary btn-block" type="button">
+                            Efectividad de Rutas <span class="badge">{{InformacionGeneral.EfectividadRutas*100 | number:2}}%</span>
+                        </button>              
+                    </div>
+                </div>    
+            </div>
+
+            <div>
+                    <div class="row row-flex margin-top-10">
+                        <div class="col-md-3 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Visitas Programadas <span class="badge">{{InformacionGeneral.VisitasProgramadas ? InformacionGeneral.VisitasProgramadas : 0 | number:0}}</span>
+                            </button>              
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Visitas Realizadas <span class="badge">{{InformacionGeneral.VisitasRealizadas ? InformacionGeneral.VisitasRealizadas : 0 | number:0 }}</span>
+                            </button>              
+                        </div>      
+                        <div class="col-md-3 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Efectectividad de Visitas <span class="badge">{{InformacionGeneral.EfectividadVisitas*100 | number:2}}%</span>
+                            </button>              
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Visitas Justificadas <span class="badge">{{InformacionGeneral.VisitasJustificadas ? InformacionGeneral.VisitasJustificadas : 0 | number:0}}</span>
+                            </button>
+                        </div>        
+                    </div>    
+            </div>
+            <div>
+                    <div class="row row-flex margin-top-10 margin-bottom-10">
+    
+                        <div class="col-md-4 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Actividades Programadas <span class="badge">{{InformacionGeneral.ActividadesProgramadas ? InformacionGeneral.ActividadesProgramadas : 0 | number:0 }}</span>
+                            </button>            
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Actividades Realizadas <span class="badge">{{InformacionGeneral.ActividadesRealizadas ? InformacionGeneral.ActividadesRealizadas : 0 | number:0}}</span>
+                            </button>              
+                        </div>              
+                        <div class="col-md-4 text-center">
+                            <button class="btn btn-primary btn-block" type="button">
+                                Efectividad de Actividad <span class="badge">{{InformacionGeneral.EfectividadActividades*100 | number:2}}%</span>
+                            </button>              
+                        </div>
+    
+                    </div>    
+                </div>            
+        </div>
+ -->    </div>
+</div>
+
+<div class="row" >
+    <div class="col-md-12 col-lg-12" >
+        <div class="card-deck" >
+            <div class="card border border-dark col-md-4">
+                <div class="card-header text-success header-success bg-success text-center">
+                        <h1>Rutas    <span class="fa fa-car" aria-hidden="true"></span></h1>
+                </div>
+                <div class="card-body bg-success">
+                    <h4 class="card-title text-success text-center">Programadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.RutasProgramadas ? InformacionGeneral.RutasProgramadas : 0 | number:0}} </cite>
+                    </h4>
+                    <h4 class="card-title text-success text-center">Conectadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.RutasConectadas ? InformacionGeneral.RutasConectadas : 0 | number:0 }}</cite>
+                    </h4>
+                    <h4 class="card-title text-success text-center">Efectividad
+                        <cite title="RutasConectadas"></cite>{{InformacionGeneral.EfectividadRutas*100 | number:0}}% 
+                    </h4>               
+                </div>
+            </div>  
+            <div class="card border border-success mb-3 col-md-4" >
+                <div class="card-header bg-success text-primary text-center">
+                        <h1>Visitas    <span class="fa fa-male" aria-hidden="true"></span></h1>
+                </div>
+                <div class="card-body bg-success">
+                    <h4 class="card-title text-primary  text-center">Programadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.VisitasProgramadas ? InformacionGeneral.VisitasProgramadas : 0 | number:0}}</cite>
+                    </h4>
+                    <h4 class="card-title text-primary  text-center">Realizadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.VisitasRealizadas ? InformacionGeneral.VisitasRealizadas : 0 | number:0 }}</cite>
+                    </h4>
+                    <h4 class="card-title text-primary  text-center">Efectividad
+                        <cite title="RutasConectadas">{{InformacionGeneral.EfectividadVisitas*100 | number:0}}%</cite>
+                    </h4>    
+                    <h4 class="card-title text-primary  text-center">Justificadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.VisitasJustificadas ? InformacionGeneral.VisitasJustificadas : 0 | number:0}}</cite>
+                    </h4>                               
+                </div>
+            </div>    
+            <div class="card border border-primary mb-3 col-md-4">
+                <div class="card-header bg-success text-secondary text-center">
+                    <h1>Actividades Fijas   <span class="fa fa-mobile" aria-hidden="true"></span></h1>
+                </div>
+                <div class="card-body bg-success">
+                    <h4 class="card-title text-secondary text-center">Programadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.ActividadesProgramadas ? InformacionGeneral.ActividadesProgramadas : 0 | number:0 }} </cite>
+                    </h4>
+                    <h4 class="card-title text-secondary text-center">Conectadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.ActividadesRealizadas ? InformacionGeneral.ActividadesRealizadas : 0 | number:0}} </cite>
+                    </h4>
+                    <h4 class="card-title text-secondary text-center">Realizadas
+                        <cite title="RutasConectadas">{{InformacionGeneral.EfectividadRutas*100 | number:0}}% </cite>
+                    </h4>               
+                </div>
+            </div>           
+                
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+        <div class="col-md-12 col-lg-12">
+            <div class="panel "></div>
+        </div>
+</div> 
+<div class="row">
+    <div class="col-md-12 text-justify">
+        <leaflet id="map" defaults="defaults" bounds="bounds" height="550px" lf-center="center" markers="markers"
+        layers="layers" event-broadcast="events" controls="controls">
+        </leaflet>
+    </div>
+</div> 
+<div class="row" >
+    <div class="col-md-12 col-lg-12">
+        <div class="panel panel-default">
+            <div class="table-responsive">
+            <!-- Table -->
+            <table class="table table-striped">
+                <thead>
+                    <tr >
+                        <th>Gerente</th>
+                        <th>Asesor</th>
+                        <th>Puesto</th> 
+                        <!--<th>Usuario</th>-->
+                        <th>Nombre</th>
+                        <th>Hora Inicio Ruta</th>
+                        <th>Visitas Programadas</th>
+                        <th>Visitas Realizadas</th>
+                        <th>Visitas Justificadas</th>
+                        <th>Efectividad de Visitas</th>
+                        <th>Actividades programadas</th>
+                        <th>Actividades Realizadas</th>
+                        <th>Efectividad de Actividades</th>
+                        <th>Tiempo Traslado Min.</th>
+                        <th>Tiempo Promedio Tienda</th>
+                        <th>Distancia Recorrida en Mts.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="inf in InformacionRuta">
+                        <td>{{inf.Gerente}}</td>
+                        <td>{{inf.Asesor}}</td>
+                        <td>{{inf.Puesto}}</td>
+                        <!-- <td>{{inf.Usuario}}</td> -->
+                        <td>{{inf.Nombre}}</td>
+                        <td>{{inf.FechaHoraLogin|date: "hh:mm:ss a"}}</td>
+                        <td>{{inf.VisitasProgramadas}}</td>
+                        <td>{{inf.VisitasRealizadas}}</td>
+                        <td>{{inf.VisitasJustificadas}}</td>
+                        <td>{{(inf.EfectividadVisitas* 100).toFixed(2)}}%</td>
+                        <td>{{inf.ActividadesProgramadas}}</td>
+                        <td>{{inf.ActividadesRealizadas}}</td>
+                        <td>{{(inf.EfectividadActividades* 100).toFixed(2)}}%</td>
+                        <td>{{inf.TiempoTraslado}}</td>
+                        <td>{{inf.TiempoPromedioTienda}}</td>
+                        <td>{{inf.DistanciaVisitas}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" ng-if="InformacionRuta.length === 0">
+                            Sin informacion para mostrar
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot ng-if="InformacionRuta.length < 0">
+                    <tr>
+                        <td colspan="3">Totales</td>
+                        <td>{{calcularTotalVisitas()}}</td>
+                        <td>{{calcularTotalPedidos()}}</td>
+                        <td>{{calcularTotalVenta() | currency}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+     
+        <div class="row" ng-hide="true">
+            <div class="col-md-3 col-lg-2">
+                <div class="form-group">
+                    <label for="">Fecha Inicio</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="openCalendar(1)">
+                        <span class="fa fa-calendar"></span>
+                        </button>
+                        </span>
+                        <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-model="filtros.fechaInicio" show-weeks="false" is-open="openedFechaInicio" max-date="{{::maxDate}}" ng-click="openCalendar(1)" datepicker-options="dateOptions" readonly show-button-bar="true" current-text="Actual" clear-text="Limpiar" close-text="Cerrar" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">Fecha Fin</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="openCalendar(2)">
+                        <span class="fa fa-calendar"></span>
+                        </button>
+                        </span>
+                        <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-model="filtros.fechaFin" show-weeks="false" is-open="openedFechaFin" min-date="filtros.fechaInicio" max-date="{{::maxDate}}" ng-click="openCalendar(2)" datepicker-options="dateOptions" readonly show-button-bar="true" current-text="Actual" clear-text="Limpiar" close-text="Cerrar" />
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="obtenerReporteIndicadores()">
+                        <span class="fa fa-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-hide="true">
+            <div>
+                <div class="col-md-6">
+                    <div google-chart chart="myChart"></div>
+                </div>
+                <div class="col-md-6">
+                    <div google-chart chart="myChart2"></div>
+                </div>
+            </div>
+            <div class="col-md-12" ng-show="!hayInformacionIndicadores">
+                No hay información disponible de indicadores.
+            </div>
+        </div>
+        <div class="row" ng-hide="false">
+            <div >
+                <div class="col-md-6">
+                    <div google-chart chart="myChart3"></div>
+                </div>
+                <div class="col-md-6">
+                    <div google-chart chart="myChart4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

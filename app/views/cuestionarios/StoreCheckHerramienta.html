@@ -1,0 +1,39 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Store Check Herramienta
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+   <div class="col-xs-5 text-right">Se entregó en tiempo y forma materiales y herramientas de trabajo por parte del OPV y/o Asesor Comercial</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsATiempo | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">¿Se encontró al personal?</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsPersonalEncontrado | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV realiza su labor de abordaje según criterio de las marcas</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsAbordajeSegunCriterio | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV utiliza su equipo de trabajo (smart-phone y/o tablet)</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsUsaEquipoDeTrabajo | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV se registró correctamente en la bitácora de tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsRegistroCorrecto | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">El personal PDV realiza el reporte de acuerdo a los lineamientos de la tienda</div>
+   <div class="col-xs-7">{{ datosCuestionario.EsReporteCorrecto | boolean }}</div>
+</div>

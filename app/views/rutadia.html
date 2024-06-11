@@ -1,0 +1,158 @@
+<!-- Busquedad de ruta -->
+<div class="row">
+
+   <div class="form-inline col-xs-5">
+
+      <div class="form-group">
+         <div class="input-group">
+            <select ng-change="resetRuta()" style="width: 230px;" class="form-control" name="usuario" ng-model="usuario" ng-options="r as r.label for r in rutas | orderBy:'label' track by r.ID"></select>
+            <span class="input-group-btn">
+               <button type="button" class="btn btn-primary" ng-click="buscarRuta()">
+                  <i class="fa fa-search"></i>
+               </button>
+            </span>
+         </div>
+      </div>
+
+      <button ng-show="!agregandoCliente" type="button" class="btn btn-primary" ng-click="agregarCliente()">
+         <span class="fa fa-plus-square"></span>
+         Agregar Cliente
+      </button>
+
+   </div>
+
+   <!-- Filtro de clientes de ruta -->
+   <div class="form-inline col-xs-5">
+
+      <div class="input-group">
+         <label for="nombre" class="input-group-addon">Nombre</label>
+         <input type="text" name="nombre" ng-model="nombre" class="form-control">
+      </div>
+
+      <div class="input-group">
+         <label for="tipo" class="input-group-addon">Estatus</label>
+         <select class="form-control" name="tipo" ng-model="estatus" ng-options="t.label for t in tiposFiltro"></select>
+      </div>
+
+   </div>
+
+   <div class="col-xs-2">
+      <div class="btn-group btn-group-sm pull-right">
+         <button type="button" class="btn btn-default" ng-class="{'btn-primary': vistaTabla}" ng-click="vistaTabla = true">
+            <i class="fa fa-table"></i>
+         </button>
+         <button type="button" class="btn btn-default" ng-class="{'btn-primary': !vistaTabla}" ng-click="vistaTabla = false">
+            <i class="fa fa-map"></i>
+         </button>
+      </div>
+   </div>
+
+</div>
+
+<!-- Agregar Cliente -->
+<div class="row form-inline margin-top-10" ng-show="agregandoCliente">
+
+   <div class="form-group col-md-12">
+     <!-- <label for="txtCliente">Cliente:</label>
+      <div class="input-group">
+         <input autocomplete="off" class="form-control" id="txtCliente" ng-model="clienteAgregar" placeholder="Cliente" style="width: 200px;" type="text" typeahead-editable="false" uib-typeahead="cliente as (cliente.CodigoJDE.trim() + ' - ' + cliente.Nombre) for cliente in clientes | filter:filtroAgregarCliente | filter:$viewValue">
+         <div class="input-group-btn">
+            <button class="btn btn-default" ng-click="agregarCliente()" type="button">
+               <span class="glyphicon glyphicon-plus"></span>
+            </button>
+         </div>
+      </div>-->
+    <div class="form-group has-feedback"  style="margin-left: 20px;">
+      <label for="filtro1">Cliente</label>
+        <input ng-model="clienteAgregar" type="text" class="form-control" id="" placeholder="" typeahead-editable="false" typeahead-min-length="3" typeahead-wait-ms="500" uib-typeahead="cliente as cliente.Nombre for cliente in buscarClienteJefeSucursal($viewValue)" typeahead-loading="loadingClientes">
+        <span ng-show="loadingClientes" class="form-control-feedback fa fa-refresh fa-spin"></span>
+    </div>
+    <button class="btn btn-success" ng-click="seleccionarCliente()">Agregar</button>
+   </div>
+
+</div>
+
+<hr>
+
+<div class="row" ng-show="vistaTabla">
+
+   <div class="col-xs-12">
+
+      <table class="table">
+         <thead>
+            <tr>
+               <th>#</th>
+               <th>Cliente</th>
+               <th>Dirección</th>
+               <th>Estatus</th>
+               <th>Detalle</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr ng-repeat="c in ruta | filter:filtroClientes">
+               <td>{{ c.PDV.ID }}</td>
+               <td>{{ c.PDV.Nombre }}</td>
+               <td>{{ c.PDV.Direccion }}</td>
+               <td>
+                  <span class="fa" ng-class="c.icono"></span>
+                  {{ c.Estatus }}</td>
+               <td>
+                  <a ui-sref="detalle-visita({idVisita:c.ID})" class="btn btn-default">
+                     <span class="fa fa-info-circle"></span>
+                  </a>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+   </div>
+
+</div>
+
+<div class="row" ng-show="!vistaTabla">
+
+  <div class="col-xs-12" id="mapaHistorico">
+     <ui-gmap-google-map center="map.center" control="map.control" zoom='map.zoom' options='map.options'>
+        <ui-gmap-markers idkey="'ID'" models='map.markersFiltrados' coords="'coords'"
+             options="'options'" icon="'icon'" click="windowOpen"
+             events="{mouseover:enterMarker, mouseout:exitMarker}"></ui-gmap-markers>
+              <ui-gmap-polyline path='map.path'
+                       stroke='map.stroke'
+                       clickable='false'
+                       draggable='false'
+                       editable='false'
+                       geodesic='true'
+                       icons='map.pathIcons'
+                       visible='map.pathVisible'
+                       static='true'
+              >
+              <ui-gmap-window
+                coords='map.windowOptions.coords'
+                show='map.windowOptions.visible'
+                isIconVisibleOnClick='true'
+                closeClick='windowClose'
+                options='map.windowOptions.infoOptions'
+                templateUrl="'historicoruta.ventana.html'"
+                templateParameter="visitaVentana"
+                >
+              </ui-gmap-window>
+     </ui-gmap-google-map>
+  </div>
+
+   <script type="text/ng-template" id="historicoruta.ventana.html">
+     <div>
+        <div ng-cloak>
+           <h5>{{ parameter.PDV.Nombre }}
+             <a ui-sref="detalle-visita({idVisita:parameter.ID})" class="btn btn-default btn-xs">
+               <i class="fa fa-info-circle"></i>
+             </a>
+           <h5>
+        </div>
+        <div>
+           {{ parameter.InicioVisita | date:'shortTime'}}
+           {{ parameter.FinVisita && '-' }} {{ parameter.FinVisita | date:'shortTime'}}
+        </div>
+     </div>
+   </script>
+
+</div>

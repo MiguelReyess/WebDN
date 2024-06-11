@@ -1,0 +1,80 @@
+<div class="row">
+
+   <div class="col-md-12">
+      <div class="panel panel-default" style="margin-bottom: 0">
+         <div class="panel-body" style="height: calc(100vh - 90px); overflow: auto; padding: 0">
+            <table class="table table-hover table-striped">
+               <colgroup>
+                  <col width="100px">
+                  <col width="250px">
+                  <col >
+                  <col width="10">
+               </colgroup>
+               <thead>
+                  <tr>
+                     <th>Numero</th>
+                     <th>Cadena</th>
+                     <th>Nombre</th>
+                     <th>Acción</th>
+                  </tr>
+                  <tr>
+                     <th>
+                        <input
+                           class="form-control"
+                           type="text"
+                           ng-model="vm.filtroNumTienda"
+                           ng-model-options="{debounce: 200}">
+                     </th>
+                     <th>
+                        <input
+                           class="form-control"
+                           type="text"
+                           ng-model="vm.filtroCadena"
+                           ng-model-options="{debounce: 200}">
+                     </th>
+                     <th>
+                        <input
+                           class="form-control"
+                           type="text"
+                           ng-model="vm.filtroNombre"
+                           ng-model-options="{debounce: 200}">
+                     </th>
+                     <th></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr ng-if="!vm.lista.length">
+                     <td colspan="4">Sin PDVs pendientes</td>
+                  </tr>
+                  <tr
+                     ng-class="{danger: pdv.EsRechazado}"
+                     ng-repeat="pdv in vm.lista | filtroAnidado:{NumeroTienda: vm.filtroNumTienda,
+                         'Cadena.Nombre': vm.filtroCadena,
+                         Nombre: vm.filtroNombre} track by pdv.ID">
+                     <td>{{ pdv.NumeroTienda }}</td>
+                     <td>{{ pdv.Cadena.Nombre }}</td>
+                     <td>{{ pdv.Nombre }}</td>
+                     <td class="text-right">
+                        <button
+                           ng-if="pdv.EsRechazado && !('pdv-auditar' | isState)"
+                           type="button"
+                           class="btn btn-xs btn-primary"
+                           ng-click="vm.editar(pdv)">
+                           Editar
+                        </button>
+                        <button
+                           ng-if="'pdv-auditar' | isState"
+                           type="button"
+                           class="btn btn-xs btn-primary"
+                           ng-click="vm.auditar(pdv)">
+                           <i class="fa fa-eye"></i> Ver
+                        </button>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+
+</div>

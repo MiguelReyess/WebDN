@@ -1,0 +1,140 @@
+<div class="row">
+
+   <div class="form-inline col-xs-5" ng-form="form">
+
+      <div class="form-group">
+         <div class="input-group">
+            <input style="width: 140px;" readonly ng-model="fecha" ng-click="inicio_open = true" uib-datepicker-popup="dd-MMM-yyyy" is-open="inicio_open" type="text" name="fecha" class="form-control">
+            <span class="input-group-btn">
+               <button type="button" class="btn btn-primary" ng-click="inicio_open = true">
+                  <i class="fa fa-calendar"></i>
+               </button>
+            </span>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <div class="input-group">
+            <select style="width: 170px;" class="form-control" required name="usuario" ng-model="usuario" ng-options="r as r.label for r in rutas"></select>
+            <span class="input-group-btn"></span>
+         </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" ng-click="buscarRuta()" ng-disabled="form.$invalid" >
+         <i class="fa fa-search"></i>
+      </button>
+
+   </div>
+
+   <div class="form-inline col-xs-5">
+
+      <div class="input-group">
+         <label for="nombre" class="input-group-addon">Nombre</label>
+         <input type="text" name="nombre" ng-model="nombre" class="form-control">
+      </div>
+
+      <div class="input-group">
+         <label for="tipo" class="input-group-addon">Estatus</label>
+         <select class="form-control" name="tipo" ng-model="estatus" ng-options="t.label for t in tiposFiltro"></select>
+      </div>
+
+   </div>
+
+   <div class="col-xs-2">
+      <div class="btn-group btn-group-sm pull-right">
+         <button type="button" class="btn btn-default" ng-class="{'btn-primary': vistaTabla}" ng-click="vistaTabla = true">
+            <i class="fa fa-table"></i>
+         </button>
+         <button type="button" class="btn btn-default" ng-class="{'btn-primary': !vistaTabla}" ng-click="vistaTabla = false">
+            <i class="fa fa-map"></i>
+         </button>
+      </div>
+   </div>
+
+</div>
+
+<hr>
+
+<div class="row" ng-show="vistaTabla">
+
+   <div class="col-xs-12">
+
+      <table class="table">
+         <thead>
+            <tr>
+               <th>#</th>
+               <th>Cliente</th>
+               <th>Dirección</th>
+               <th>Estatus</th>
+               <th>Detalle</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr ng-repeat="c in ruta | filter:filtroClientes">
+               <td>{{ c.PDV.ID }}</td>
+               <td>{{ c.PDV.Nombre }}</td>
+               <td>{{ c.PDV.Direccion }}</td>
+               <td>
+                  <span class="fa" ng-class="c.icono"></span>
+                  {{ c.Estatus }}
+               </td>
+               <td>
+                  <button type="button" class="btn btn-default" ng-click="abrirDetalle(c)">
+                     <span class="fa fa-info-circle"></span>
+                  </button>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+   </div>
+
+</div>
+
+<div class="row" ng-show="!vistaTabla">
+
+   <div class="col-xs-12" id="mapaHistorico">
+      <ui-gmap-google-map center="map.center" control="map.control" zoom='map.zoom' options='map.options'>
+         <ui-gmap-markers idkey="'ID'" models='map.markers' coords="'coords'"
+              options="'options'" icon="'icon'" click="windowOpen">
+          </ui-gmap-markers>
+          <ui-gmap-window
+               coords='map.windowOptions.coords'
+               show='map.windowOptions.visible'
+               isIconVisibleOnClick='true'
+               closeClick='windowClose'
+               options='map.windowOptions.infoOptions'
+               templateUrl="'historicoruta.ventana.html'"
+               templateParameter="visitaVentana"
+               >
+             </ui-gmap-window>
+             <ui-gmap-polyline path='map.path'
+                      stroke='map.stroke'
+                      clickable='false'
+                      draggable='false'
+                      editable='false'
+                      geodesic='true'
+                      icons='map.pathIcons'
+                      visible='true'
+                      static='true'
+             >
+        </ui-gmap-google-map>
+   </div>
+
+   <script type="text/ng-template" id="historicoruta.ventana.html">
+     <div>
+        <div ng-cloak>
+           <h5>{{ parameter.PDV.Nombre }}
+             <a ui-sref="detalle-visita({idVisita:parameter.ID})" class="btn btn-default btn-xs">
+               <i class="fa fa-info-circle"></i>
+             </a>
+           <h5>
+        </div>
+        <div>
+           {{ parameter.InicioVisita | date:'shortTime'}}
+           {{ parameter.FinVisita && '-' }} {{ parameter.FinVisita | date:'shortTime'}}
+        </div>
+     </div>
+   </script>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="col-md-12">
+   <div class="row">
+      <div class="col-md-3">
+         <button class="btn btn-link" ng-click="vm.volver()">
+            <span class="fa fa-chevron-left"></span> Volver a Codigos
+         </button>
+      </div>
+      <div class="col-md-3 col-md-offset-6">
+         <button class="btn btn-success" ng-click="vm.exportar()" ng-disabled="!vm.puedeExportar">
+            <span class="fa fa-download"></span> Exportar
+         </button>
+      </div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-md-5">
+         <h4><span class="text-muted">Codigo:</span> <span class="text-success">{{ vm.codigo }}</span></h4>
+      </div>
+      <div class="col-md-5">
+         <h4><span class="text-muted">Periodo:</span> <span class="text-success">{{ vm.fechaInicio | formatoMoment }} - {{ vm.fechaFin | formatoMoment }}</span></h4>
+      </div>
+   </div>
+   <div class="row" ng-show="vm.rep">
+      <div class="col-md-6">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="col-md-9 text-right text-muted bold">Total Asignaciones Tienda: </div><div class="col-md-3 text-left text-success"> {{ vm.rep.TotalPDVsConTarea }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Ejecutadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalPDVsConTareaEjecutada }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas en Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasEnTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Fuera de Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasFueraTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas a Tiempo en Forma: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasEnFormaEnTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Fuera de Tiempo en Forma: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasEnFormaFueraTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Rechazadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasRechazadas }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Hechas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasHechas }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas No Contestadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareasNoContestadas }}</div>
+               <div class="col-md-9 text-right text-muted bold">Total Tareas Asignadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.TotalTareas }}</div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="col-md-9 text-right text-muted bold">Cobertura de Tiendas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeEficienciaDeTarea }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas en Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasEnTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas Fuera de Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasFueraTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas No Realizadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasNoRealizadas }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas Rechazadas: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasRechazadas }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas en Forma a Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasEnFormaEnTiempo }}</div>
+               <div class="col-md-9 text-right text-muted bold">Porcentaje Tareas en Forma Fuera de Tiempo: </div><div class="col-md-3 text-left text-success">{{ vm.rep.PorcentajeTareasEnFormaFueraTiempo }}</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-md-12">
+         <div kendo-grid id="grid"></div>
+      </div>
+   </div>
+</div>

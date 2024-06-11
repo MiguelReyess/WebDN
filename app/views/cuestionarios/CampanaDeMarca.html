@@ -1,0 +1,40 @@
+<div class="row">
+   <div class="col-md-12">
+      <h3>
+         Cuestionario de Campaña de Marca
+      </h3>
+   </div>
+</div>
+
+<hr>
+
+<div ng-repeat="datosCuestionario in datosCuestionario">
+<div class="row">
+   <div class="col-xs-5 text-right">Marca</div>
+   <div class="col-xs-7">{{ datosCuestionario.Marca.Descripcion || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">¿Se implemento material POP?</div>
+   <div class="col-xs-7">{{ datosCuestionario.ImplementacionMaterialPOP | boolean }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Tipo de Material</div>
+   <div class="col-xs-7">{{ datosCuestionario.TipoMaterial.Nombre || 'N/D' }}</div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Evidencia</div>
+   <div class="col-xs-7">
+      <img class="img-responsive img-rounded" ng-src="{{ crearDataUrl(datosCuestionario.Evidencia) }}"/>
+      <span ng-hide="datosCuestionario.Evidencia">N/D</span>
+   </div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-xs-5 text-right">Justificación</div>
+   <div class="col-xs-7">{{ datosCuestionario.justificacion|| 'N/D' }}</div>
+</div>
+<hr ng-if="!$last">
+</div>

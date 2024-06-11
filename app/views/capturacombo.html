@@ -1,0 +1,20 @@
+<div class="form-group" ng-class="{'has-success': form.{{ name }}.$valid, 'has-error': form.{{ name }}.$invalid}">
+   <label class="control-label col-sm-4">{{ label }}</label>
+   <div class="col-sm-8">
+      <div class="input-group">
+
+         <ui-select theme="bootstrap" ng-model="$parent.model" on-select="cambio()" append-to-body="true">
+            <ui-select-match allow-clear="true" placeholder="{{conVacio}}">
+               <span ng-bind="opcionLabel({item:$select.selected})"></span>
+            </ui-select-match>
+            <ui-select-choices>
+               <span ng-bind="opcionLabel({item:item})"></span>
+            </ui-select-choices>
+         </ui-select>
+
+         <span class="input-group-addon">
+            <span class="fa fa-fw" ng-class="{'fa-check': form.{{ name }}.$valid, 'fa-times': form.{{ name }}.$invalid}"></span>
+         </span>
+      </div>
+   </div>
+</div>

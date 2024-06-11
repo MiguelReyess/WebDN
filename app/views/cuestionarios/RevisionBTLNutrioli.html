@@ -1,0 +1,65 @@
+<ion-view cache-view="false" ng-controller="BTLNutrioliController as vm" ng-form="formaPrincipal">
+  <ion-nav-buttons side="right"></ion-nav-buttons>
+  <ion-content class="has-header cuestionario" overflow-scroll="true">
+
+    <div class="list list-{{tema}}">
+
+      <ng-form name="forma">
+
+       <label class="item item-{{tema}} item-input item-select">
+          <span class="input-label">Producto</span>
+          <select ng-model="vm.captura.Producto" ng-options="producto.DescCorta for producto in vm.productosPropios" required tabindex="2">
+            <option value="">Elija un producto</option>
+          </select>
+        </label>
+        
+        <label class="item item-{{tema}} item-input">
+         <span class="input-label no-max">Precio {{vm.captura.Producto.DescCorta}}</span> 
+         <input class="right-align" entrada-precio ng-model="vm.captura.Precio" required tabindex="10" type="number"/>
+        </label>
+        
+        <ion-toggle class="item-{{tema}} item-text-wrap" ng-model="vm.captura.EmpezoTiempoForma">
+          Se empezó en tiempo y forma el evento (permisos, promocionales, materiales)
+        </ion-toggle>
+
+        <ion-toggle class="item-{{tema}} item-text-wrap" ng-model="vm.captura.MecanicaLlevadaCorrecta">
+          La mecánica del evento se lleva a cabo correctamente a los consumidores
+        </ion-toggle>
+
+        <label class="item item-{{tema}} item-input item-stacked-label item-text-wrap">
+          <span class="input-label no-max">La opinión del consumidor es favorable a lo esperado (1-10)</span>
+          <input class="right-align" ng-model="vm.captura.OpinionConsumidor" pattern="[1-9]|10" only-number type="tel"/>
+        </label>
+
+        <label class="item item-{{tema}} item-input item-stacked-label item-text-wrap">
+          <span class="input-label no-max">Observaciones (permisos, promocionales, materiales, etc...)</span>
+          <textarea ng-model="vm.captura.Observaciones"  rows="3" type="text"></textarea>
+        </label>
+
+          <label class="item item-{{tema}}">Competencia - {{vm.captura.Producto.ProductosCompetencia[0].DescCorta}}</label>
+
+          <label class="item item-{{tema}} item-input">
+         <span class="input-label no-max">Precio Competencia</span> 
+         <input class="right-align" entrada-precio ng-model="vm.captura.PrecioCompetencia"type="number"/>
+        </label>
+
+          <label class="item item-{{tema}} item-input item-stacked-label item-text-wrap">
+          <span class="input-label no-max">Actividad promocional adicional al precio de competencia</span>
+          <textarea ng-model="vm.captura.ActividadPromocionalAdicionalAlPrecioDeCompetencia" type="text"></textarea>
+        </label>
+
+        <captura-imagen data-data-url="vm.dataUrl" texto-boton="Evidencia"></captura-imagen>
+
+      </ng-form>
+
+      <div class="item item-{{tema}}">
+        <button class="button button-block button-stable" ng-click="vm.guardar()">
+          <i class="fa fa-save"></i>
+          Terminar
+        </button>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

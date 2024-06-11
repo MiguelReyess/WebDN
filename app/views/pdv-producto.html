@@ -1,0 +1,92 @@
+<div class="row">
+   <div class="col-md-2">
+      <selector-cliente modelo="vm.pdvActual">
+         <button type="button" class="btn btn-primary" ng-click="abrir()">
+            Seleccionar PDV
+         </button>
+      </selector-cliente>
+   </div>
+   <div class="col-md-10">
+      <h3 ng-show="vm.pdvActual" ng-bind-template="{{vm.pdvActual.ID}} - {{vm.pdvActual.Nombre}}"></h3>
+   </div>
+</div>
+
+<hr>
+
+<div class="row">
+
+   <div class="col-md-12">
+
+      <div class="col-md-12" style="padding: 0">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+               <h3 class="panel-title">Productos Disponibles</h3>
+            </div>
+
+            <div class="panel-body" style="height: calc(50vh - 150px); overflow: auto; padding: 0">
+               <table class="table table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th>SKU</th>
+                        <th>Producto</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="producto in vm.productos | enLista:vm.actuales:'ID':true track by producto.ID">
+                        <td>{{ +producto.SKU || '' }}</td>
+                        <td>{{ producto.DescCorta }}<span ng-if="producto.mls"> - {{ producto.mls }}ml</span></td>
+                        <td class="text-right">
+                           <button ng-disabled="!vm.pdvActual" type="button" class="btn btn-xs btn-success" ng-click="vm.agregarProducto(producto)">
+                              <i class="fa fa-plus"></i>
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+         </div>
+      </div>
+
+      <div class="col-md-12" style="padding: 0">
+         <div class="panel panel-default" style="margin-bottom: 0">
+            <div class="panel-heading">
+               <button ng-if="vm.pdvActual" type="button" class="btn btn-primary pull-right" ng-click="vm.guardar()">
+                  <i class="fa fa-save"></i>
+                  Guardar
+               </button>
+               <h3 class="panel-title">Productos Asignados</h3>
+               <span ng-bind-template="{{vm.pdvActual.Nombre || '-'}}"></span>
+            </div>
+            <div class="panel-body" style="height: calc(50vh - 130px); overflow: auto; padding: 0">
+               <table class="table table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th>SKU</th>
+                        <th>Producto</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-if="!vm.actuales.length">
+                        <td colspan="2">Sin Productos</td>
+                     </tr>
+                     <tr ng-repeat="producto in vm.actuales track by producto.ID">
+                        <td>{{ +producto.SKU || '' }}</td>
+                        <td>{{ producto.DescCorta }}<span ng-if="producto.mls"> - {{ producto.mls }}ml</span></td>
+                        <td class="text-right">
+                           <button type="button" class="btn btn-xs btn-danger" ng-click="vm.quitarProducto(producto)">
+                              <i class="fa fa-trash"></i>
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+</div>
