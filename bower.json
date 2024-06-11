@@ -1,0 +1,54 @@
+{
+  "name": "dnweb",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.5.9",
+    "bootstrap-sass-official": "^3.2.0",
+    "angular-animate": "1.5.9",
+    "angular-sanitize": "1.5.9",
+    "angular-touch": "1.5.9",
+    "angular-sweetalert": "latest",
+    "angular-ui-router": "~0.2.15",
+    "angular-moment": "~0.10.3",
+    "moment": "~2.10.6",
+    "angular-google-maps": "~2.2.1",
+    "angular-bootstrap": "~0.14.3",
+    "components-font-awesome": "~4.5.0",
+    "angular-loading-bar": "~0.8.0",
+    "checklist-model": "~0.8.0",
+    "kendo-ui": "git@gitlab.com:ragasa-dev/library/kendo-ui.git",
+    "ng-file-upload": "~11.0.0",
+    "angular-resource": "~1.4.8",
+    "angular-i18n": "~1.4.9",
+    "ui-select": "angular-ui-select#^0.16.0",
+    "toastr": "^2.1.2",
+    "angular-socket-io": "^0.7.0",
+    "notificaciones-ragasa-cliente": "git@gitlab.com:ragasa-dev/library/notificaciones-cliente.git",
+    "grunt": "^1.0.1",
+    "minimatch": "^0.2.14",
+    "jshint": "^2.9.4",
+    "sweetalert": "^1.1.3",
+    "lodash": "3.x",
+    "juicy-tile-table": "^0.0.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.9",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-newer": "^1.2.0"
+  },
+  "appPath": "app",
+  "moduleName": "dnwebApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "1.5.9"
+  }
+}

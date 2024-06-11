@@ -1,0 +1,1794 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"datosCues",
+				"datosCuestionario.SeColocoCollarin"
+			],
+			[
+				"form",
+				"formatoMoment	(reporte-tiempo-forma-codigo.html)"
+			],
+			[
+				"noti",
+				"notificacion"
+			],
+			[
+				"sockets",
+				"socketsUsuario"
+			],
+			[
+				"borrarN",
+				"borrarNotificacionByID	(notificacion.js)"
+			],
+			[
+				"Notifica",
+				"NotificacionCtrl"
+			],
+			[
+				"soc",
+				"socketio"
+			],
+			[
+				"modu",
+				"module	(notificacion.js)"
+			],
+			[
+				"obtenerN",
+				"obtenerNotificacionesPorUsuarioDestinatario	(notificacion.js)"
+			],
+			[
+				"boora",
+				"bs3-toolbar	bs3-button-toolbar"
+			],
+			[
+				"obtener",
+				"obtenerNotificaciones"
+			],
+			[
+				"obtenerNoti",
+				"obtenerNotificaciones"
+			],
+			[
+				"Notifi",
+				"NotificacionCtrl"
+			],
+			[
+				"isset",
+				"isset〔function〕"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"click",
+				"clickAlgo	(controllers.js)"
+			],
+			[
+				"index",
+				"indexTR"
+			],
+			[
+				"marcad",
+				"marcadorSeleccionado"
+			],
+			[
+				"ng-mouse",
+				"ng-mouseleave	AngularJS"
+			],
+			[
+				"ng-mou",
+				"ng-mouseenter	AngularJS"
+			],
+			[
+				"fakeMar",
+				"fakeMarkerPosition"
+			],
+			[
+				"app",
+				"apply	method.apply()"
+			],
+			[
+				"marc",
+				"marcador"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"directi",
+				"directives	property"
+			],
+			[
+				"FORM_",
+				"FORM_DIRECTIVES	alias"
+			],
+			[
+				"DetallePedido",
+				"DetalleTemporalPedido"
+			],
+			[
+				"datos",
+				"datosComboProductos"
+			],
+			[
+				"box-s",
+				"box-sizing"
+			],
+			[
+				"obtenerTi",
+				"obtenertipoPedidoIDTipoRuta	(Pedido.js)"
+			],
+			[
+				"sucur",
+				"sucursal〔variable〕"
+			],
+			[
+				"mark",
+				"markers"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"dire",
+				"direccionPDV"
+			],
+			[
+				"cargarMa",
+				"cargarMarcadores"
+			],
+			[
+				"of",
+				"oficinas	(crearcliente.html)"
+			],
+			[
+				"Calif",
+				"Calificacion"
+			],
+			[
+				"deleteMed",
+				"deleteMedicionMuebleTramo"
+			],
+			[
+				"deleteMedicionM",
+				"deleteMedicionMuebleNivel"
+			],
+			[
+				"deleteMater",
+				"deleteMaterialGrafico"
+			],
+			[
+				"IDMedicion",
+				"IDMedicionMuebleNivel"
+			],
+			[
+				"IDMedicionM",
+				"IDMedicionMuebleTramo"
+			],
+			[
+				"Medicion",
+				"MedicionMuebleNivel"
+			],
+			[
+				"Material",
+				"MaterialGraficoPromocionCompetencia"
+			],
+			[
+				"cerrarSe",
+				"cerrarSesionID	(Usuario.js)"
+			],
+			[
+				"sub",
+				"subsribeSucursalChange"
+			],
+			[
+				"Informa",
+				"InformacionRuta	(inicio.html)"
+			],
+			[
+				"informacion",
+				"informacionRutaDiaCtrl	(app.js)"
+			],
+			[
+				"upper",
+				"uppercase"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"Munici",
+				"Municipios"
+			],
+			[
+				"limpiar",
+				"limpiarCampos	(crearcliente.html)"
+			],
+			[
+				"frm",
+				"frmDatosFacturacion	(crearcliente.html)"
+			],
+			[
+				"frmDa",
+				"frmDatosContacto	(crearcliente.html)"
+			],
+			[
+				"ready",
+				"ready	document.ready - $(function(){})"
+			],
+			[
+				"f",
+				"focusout	.focusout()"
+			],
+			[
+				"ng-op",
+				"ng-options	AngularJS"
+			],
+			[
+				"Califi",
+				"CalificacionEstrellas"
+			],
+			[
+				"$state",
+				"$state"
+			],
+			[
+				"obteer",
+				"obtenerOpcionesFromStorage"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"margin-",
+				"margin-right"
+			],
+			[
+				"hi",
+				"hideLoading"
+			],
+			[
+				"loadi",
+				"loadingsOpenned"
+			],
+			[
+				"turnOn",
+				"turnOnOnce"
+			],
+			[
+				"preve",
+				"preventOne"
+			],
+			[
+				"isPreve",
+				"isPreventOne"
+			],
+			[
+				"isTurn",
+				"isTurnOnce"
+			],
+			[
+				"turnO",
+				"turnOnOnceCount"
+			],
+			[
+				"prevent",
+				"preventAllFlag"
+			],
+			[
+				"isPre",
+				"isPreventOne"
+			],
+			[
+				"show",
+				"showLoading"
+			],
+			[
+				"$htt",
+				"$httpProvider"
+			],
+			[
+				"on",
+				"onLogin	(mainCtrl.js)"
+			],
+			[
+				"$modal",
+				"$modalInstance"
+			],
+			[
+				"window",
+				"windowTemplateUrl"
+			],
+			[
+				"dashb",
+				"dashboardCtrl	(app.js)"
+			],
+			[
+				"islo",
+				"islogged"
+			],
+			[
+				"confi",
+				"configuracionManual"
+			],
+			[
+				"congi",
+				"configuracionManual"
+			],
+			[
+				"mercade",
+				"mercadeos"
+			],
+			[
+				"contador",
+				"contadorRespuesta"
+			],
+			[
+				"cantidad",
+				"cantidadBodegasSincronizar"
+			],
+			[
+				"guardar",
+				"guardarBodega"
+			],
+			[
+				"de",
+				"detallePedido"
+			],
+			[
+				"state",
+				"state(\"home	(angular-ui-router.js)"
+			],
+			[
+				"other",
+				"otherwise	Angular.js"
+			],
+			[
+				"$urlR",
+				"$urlRouterProvider	(angular-ui-router.js)"
+			],
+			[
+				"menuS",
+				"menuShow"
+			],
+			[
+				"txtPrecioO",
+				"txtPrecioOferta"
+			],
+			[
+				"txtExistencia",
+				"txtExistenciaCajasPromocion"
+			],
+			[
+				"txtExistenciaCajasPromo",
+				"txtExistenciaCajasPromocionCompetencia"
+			],
+			[
+				"txtPrecioOferta",
+				"txtPrecioOfertaCompetencia"
+			],
+			[
+				"txtPrecioP",
+				"txtPrecioPublicoCompetencia"
+			],
+			[
+				"CantidadCombos",
+				"CantidadCombosColocadosExhibicion"
+			],
+			[
+				"CantidadCombosColo",
+				"CantidadCombosColocadosAnaquel"
+			],
+			[
+				"TipoEx",
+				"TipoExhibicionCompetencia"
+			],
+			[
+				"Cantidad",
+				"CantidadPiezasDisponibles"
+			],
+			[
+				"FechaToma",
+				"FechaTomaGPS"
+			],
+			[
+				"CantidadCombosCoo",
+				"CantidadCombosColocadosExhibicion	(armadocombos.js)"
+			],
+			[
+				"CantidadCombosC",
+				"CantidadCombosColocadosAnaquel	(armadocombos.js)"
+			],
+			[
+				"Ar",
+				"ArmadoCombos	(DataSource.js)"
+			],
+			[
+				"txtPrecio",
+				"txtPrecioCombo	(armadocombos.html)"
+			],
+			[
+				"txtCantidad",
+				"txtCantidadCombosColocadosEx	(armadocombos.html)"
+			],
+			[
+				"txtCantidadCom",
+				"txtCantidadCombosColocadosAn	(armadocombos.html)"
+			],
+			[
+				"CantidadCombosColoca",
+				"CantidadCombosColocadosAnaquel	(DataSource.js)"
+			],
+			[
+				"Cuestionario",
+				"CuestionarioGenerico"
+			],
+			[
+				"Colocaci",
+				"ColocacionPOP	(DataSource.js)"
+			],
+			[
+				"txtUbicac",
+				"txtUbicacionExihibicionCompetencia	(exhibicion.html)"
+			],
+			[
+				"txtCantidadPie",
+				"txtCantidadPiezasDisponiblesCompetencia	(exhibicion.html)"
+			],
+			[
+				"get",
+				"getClienteSeleccionado	(index.js)"
+			],
+			[
+				"Ubicacion",
+				"UbicacionExhibicionCompetencia"
+			],
+			[
+				"CantidadPie",
+				"CantidadPiezasDisponiblesCompetencia"
+			],
+			[
+				"TieneEx",
+				"TieneExhibicionCompetencia"
+			],
+			[
+				"UbicacionEx",
+				"UbicacionExhibicionPropia"
+			],
+			[
+				"fechaT",
+				"fechaTomaEvidencia"
+			],
+			[
+				"unix",
+				"unixTimeStamotoMSDate"
+			],
+			[
+				"img",
+				"imgEvidencia	(geolocalizacion.html)"
+			],
+			[
+				"btnCa",
+				"btnCapturarEvidencia	(geolocalizacion.html)"
+			],
+			[
+				"Inventar",
+				"Inventario	(DataSource.js)"
+			],
+			[
+				"list-item",
+				"list-group-item"
+			],
+			[
+				"realizo",
+				"realizoAjuste"
+			],
+			[
+				"Existei",
+				"ExistenciaSistema"
+			],
+			[
+				"Existe",
+				"ExistenciaBodega"
+			],
+			[
+				"realiz",
+				"realizoAjuste"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/config.json",
+			"settings":
+			{
+				"buffer_size": 8615,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/Translations/translation.es.json",
+			"settings":
+			{
+				"buffer_size": 13347,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Nodejs/Nodejs.sublime-build",
+					""
+				],
+				[
+					"Packages/JSHint/JSHint.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Nodejs/Nodejs.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"set Syntax: Sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"Set",
+				"Set Syntax: JSON"
+			],
+			[
+				"jsh",
+				"JSHint"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"j",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"indent",
+				"Auto indent"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwn",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"preview",
+				"Markdown HTML Preview"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"mark",
+				"Markmon launch"
+			],
+			[
+				"markdwo",
+				"Markdown HTML Preview"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"jshint",
+				"Build With: JSHint"
+			],
+			[
+				"beat",
+				"HTMLBeautify"
+			],
+			[
+				"ionic-",
+				"Snippet: ionic-content"
+			],
+			[
+				"ionic-bar",
+				"Snippet: ionic-header-bar"
+			],
+			[
+				"ionic-head",
+				"Snippet: ionic-header-bar"
+			],
+			[
+				"ionic-view",
+				"Snippet: ionic-view"
+			],
+			[
+				"ionic-butt",
+				"Snippet: ionic-css-button"
+			],
+			[
+				"javascr",
+				"Javascript Beautify"
+			],
+			[
+				"ionic",
+				"Snippet: ionic-tabs"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"bea",
+				"HTMLBeautify"
+			],
+			[
+				"htmlbea",
+				"HTMLBeautify"
+			],
+			[
+				"htmlbe",
+				"HTMLBeautify"
+			],
+			[
+				"head",
+				"Snippet: bs3-page header"
+			],
+			[
+				"JSON",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pre",
+				"Pretty JSON: JSON 2 XML"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"bs3-list",
+				"Snippet: bs3-list-group"
+			],
+			[
+				"javasc",
+				"Javascript Beautify"
+			],
+			[
+				"javascript",
+				"Javascript Beautify"
+			],
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"jsbe",
+				"Javascript Beautify"
+			],
+			[
+				"JSBeat",
+				"Javascript Beautify"
+			],
+			[
+				"table",
+				"Snippet: bs3-table-condensed"
+			],
+			[
+				"bs3-table",
+				"Snippet: bs3-table-condensed"
+			],
+			[
+				"page",
+				"Snippet: bs3-page header"
+			],
+			[
+				"Color",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"advan",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"colors",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"panel",
+				"Snippet: bs3-panel-info"
+			],
+			[
+				"pa",
+				"Snippet: bs3-page header"
+			],
+			[
+				"mini",
+				"Minify Javascript"
+			],
+			[
+				"header",
+				"Snippet: bs3-page header"
+			],
+			[
+				"hader",
+				"Snippet: bs3-page header"
+			],
+			[
+				"row",
+				"Snippet: bs3-row"
+			],
+			[
+				"jumbo",
+				"Snippet: bs3-jumbotron"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"handle",
+				"Snippet: handlebars template"
+			],
+			[
+				"dock",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"bs3-page",
+				"Snippet: bs3-page header"
+			],
+			[
+				"json ",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"set syntax json",
+				"Set Syntax: JSON"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"set yntax late",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"snippet: jquer",
+				"Snippet: jQuery.getJSON"
+			],
+			[
+				"snippet",
+				"Snippet: |currency"
+			],
+			[
+				"snippet: php",
+				"Snippet: <?php foreach (…) … <?php endforeach ?>"
+			],
+			[
+				"set Syntax Php",
+				"Set Syntax: PHP"
+			],
+			[
+				"snippet: bs3-",
+				"Snippet: bs3-carousel"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Function"
+			],
+			[
+				"bs3-input-g",
+				"Snippet: bs3-input-group-btn"
+			],
+			[
+				"bs3-heade",
+				"Snippet: bs3-page header"
+			],
+			[
+				"bs3-panel",
+				"Snippet: bs3-panel-heading"
+			],
+			[
+				"bs3-header",
+				"Snippet: bs3-page header"
+			],
+			[
+				"set syntax jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Snippet: CSS - text-transform: uppercase;"
+			],
+			[
+				"jshin",
+				"JSHint"
+			],
+			[
+				"bs3-modal",
+				"Snippet: bs3-modal"
+			],
+			[
+				"be",
+				"Javascript Beautify"
+			],
+			[
+				"bs3-hea",
+				"Snippet: bs3-page header"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"javas",
+				"Javascript Beautify"
+			],
+			[
+				"syntax",
+				"Set Syntax: HTML"
+			],
+			[
+				"set syntaxt",
+				"Set Syntax: HTML"
+			],
+			[
+				"modal",
+				"Snippet: bs3-modal"
+			],
+			[
+				"prettify",
+				"HTMLPrettify"
+			],
+			[
+				"beauty",
+				"HTMLBeautify"
+			],
+			[
+				"moda",
+				"Snippet: bs3-modal"
+			],
+			[
+				"java",
+				"Javascript Beautify"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"PHP",
+				"Set Syntax: PHP"
+			],
+			[
+				"bs3-nav",
+				"Snippet: bs3-navbar-fixed-top"
+			],
+			[
+				"beaty",
+				"HTMLBeautify"
+			],
+			[
+				"bs3-n",
+				"Snippet: bs3-navbar-basic"
+			],
+			[
+				"bsr-na",
+				"Snippet: bs3-navbar-brand"
+			],
+			[
+				"set s",
+				"Set Syntax: HTML5"
+			],
+			[
+				"set",
+				"Set Syntax: HTML5"
+			],
+			[
+				"synt",
+				"Set Syntax: HTML5"
+			],
+			[
+				"",
+				"Snippet: cycle"
+			],
+			[
+				"boiler",
+				"Snippet: htmlboiler"
+			],
+			[
+				"syntax: HTML",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"angular",
+				"Snippet: Angular.js"
+			],
+			[
+				"angularjs",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Liquid",
+				"Set Syntax: HTML Liquid"
+			],
+			[
+				"insatll",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Proyectos/DN/Web",
+		"/E/Proyectos/DN/Web/app"
+	],
+	"file_history":
+	[
+		"/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/Translations/translation.es.json",
+		"/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/Translations/translation.en.json",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/RevisionBTLNutrioli.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Exhibicion.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Inventario.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/PromocionCompetencia.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Promocion.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Negociacion.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Mercadeo.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/Precio.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/InformacionEspecificaProducto.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/PrecioCompetencia.html",
+		"/E/Proyectos/DN/Web/app/scripts/services/configuracion.js",
+		"/E/Proyectos/DN/Web/app/index.html",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/ExhibicionDemostradora.html",
+		"/E/Proyectos/DN/Web/app/scripts/services/cuestionario.js",
+		"/E/Proyectos/DN/Web/app/scripts/controllers/altaconfigcuestionario.js",
+		"/E/Proyectos/DN/Web/app/scripts/controllers/config-cuestionario-lista.js",
+		"/E/Proyectos/DN/Web/app/views/cuestionarios/ColocacionCollarin.html",
+		"/E/Proyectos/DN/Web/bower.json",
+		"/E/Proyectos/DN/Web/dn-web.sublime-project",
+		"/E/Proyectos/DN/Web/Gruntfile.js",
+		"/E/Proyectos/DN/Web/app/views/reporte-configuracion-rutas.html",
+		"/E/Proyectos/DN/Web/app/scripts/controllers/reporte-configuracion-rutas.js",
+		"/E/Proyectos/DN/trunk/Web/app/views/reporte-tiempo-forma-codigo-detalle.html",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/controllers/detallecuestionario.js",
+		"/E/Proyectos/DN/trunk/Web/app/index.html",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/app.js",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/controllers/detallevisita.js",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/services/cuestionario.js",
+		"/E/Proyectos/DN/trunk/Web/app/views/cuestionarios/ColocacionPOP.html",
+		"/E/Proyectos/DN/trunk/Web/app/views/cuestionarios/ColocacionCollarin.html",
+		"/E/Proyectos/DN/trunk/Web/app/views/cuestionarios/Cocina.html",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/controllers/config-cuestionario-lista.js",
+		"/E/Proyectos/DN/trunk/Web/app/scripts/services/configuracion.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reportecuestionario.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-productos-pdv.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-tiempo-forma-codigo-detalle.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-tiempo-forma.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/services/ruta.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/app.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/supervision.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/envio-notificaciones.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/services/configuracion.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reporte-tiempo-forma-codigo-detalle.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/services/excel-servidor.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/services/reporte.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/styles/main.scss",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/index.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/bower_components/angular/angular.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/styles/blue_theme.scss",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/styles/devoops.scss",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reporte-tiempo-forma-codigo.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-tiempo-forma-codigo.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reportecuestionario.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/supervisionusuario.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/filters/formatomoment.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reporte-tiempo-forma.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/altapdv.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/pdv-editar.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/pdvestadistica.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/pdv-producto.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/altatarea.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/altatarea.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/config-cuestionario-lista.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/altaconfigcuestionario.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/altaconfigcuestionario.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-tiempos-traslados.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/directives/fechaminima.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reporte-registro-informacion.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/directives/capturafecha.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/reporte-pdvs-sin-asignar.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/supervision.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/views/supervisionusuario.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/reporte-forma.js",
+		"/C/Programas/SublimeText3/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/node_modules/socket.io-client/package.json",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/gasto-viaje.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/controllers/reporte-gastos-de-viaje.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/configuracion.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/documento-p8.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/views/reporte-gastos-de-viaje.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/.jshintrc",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/.jshintrc",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/Gruntfile.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/compania.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/views/reporte-documento-p8-enviado.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/controllers/reporte-documento-p8-enviado.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/unidad-negocio.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/estructura-organizacional.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/tipo-gasto.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/controllers/personas-editar.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/views/personas-editar.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/controllers/perfiles-editar.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/opcion.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/resource-utils.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/controllers/personas-lista.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/perfil.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/opciones.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/webservices.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/dominio.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/opcion-persona.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/scripts/services/sistema.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/SISOGA/trunk/P8/Web/app/index.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones/models/notificacion.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/config.xml",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/gulpfile.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/js/servicios/configuracionService.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/package.json",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/js/app.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/js/socket.io.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones-cliente/src/notificaciones/notificaciones.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones-cliente/bower.json",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones-cliente/src/notificaciones/providers/recibir-notificaciones.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones-cliente/package.json",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones-cliente/src/notificaciones/providers/enviar-notificaciones.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/scss/ionic.app.scss",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/index.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/css/ionic.app.css",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/css/style.css",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/SIC_DN_App/www/views/popoverNotificaciones.html",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/notificaciones/index.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/Seguridad/trunk/Web/app/scripts/controllers/opciones-editar.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/app/scripts/controllers/busqueda-cliente.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/Seguridad/trunk/Web/app/scripts/services/all-font-awesome.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/Gruntfile.js",
+		"/C/Users/Christian/Desktop/Mis Proyectos e Investigaciones/RagasaApps/DN/trunk/Web/package.json"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"",
+			"www",
+			"",
+			"www",
+			"DesarrolloNegocio\\www",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Invalid",
+			"Translation",
+			"\\.bold",
+			"\\n",
+			":\\s\\d+\\.\\d+",
+			"\\%",
+			":\\s\\d+",
+			"([a-zA-Z]+\\s)([a-zA-Z]+\\s?)*",
+			"([a-zA-Z\\s]+)",
+			"([\\w|\\s]+)",
+			"(\\d+)(\\w)",
+			"text-left",
+			"col-md-4",
+			"col-md-8",
+			"(\\w+:\\s)",
+			"text-right",
+			"\\<p\\>",
+			"TotalTareasNoContestadas",
+			"captura-fecha",
+			"captura-Fecha",
+			"capturaFecha",
+			"fechaMinima",
+			"(\\d*),(\\d*)",
+			"([A-Za-z]+( [A-Za-z]+)?)",
+			"([A-Za-z\\s]+)\\n",
+			"([A-Za-z\\s]+)",
+			"\\s{2,}",
+			"([A-Za-z\\s{1,1}]+)(\\s{2,})?",
+			"([A-Za-z\\s]+)(\\s{2,})?",
+			".(\\w+).*",
+			"@(\\w+).*",
+			"@(\\w+)",
+			"nombreDownload",
+			"excelURL",
+			"nombreArchivo",
+			"(\\w+)\\s+",
+			"([A-Z]+[a-z]+)([A-Z]+[a-z]*)([A-Z]+[a-z]*)?",
+			"([A-Z]+[a-z]+)([A-Z]+([a-z]+)?)([A-Z]+([a-z]+)?)?",
+			"([A-Z][a-z]+)([A-Z][a-z]+)",
+			"'",
+			"(\\w+)(\\s+)?",
+			"\\[|\\]",
+			"prod",
+			"^(\\w+\\??)",
+			"(\\w+\\??)",
+			"(\\w+).(\\w+).+",
+			"public",
+			",",
+			"(\\w+).+",
+			"\\[|\\]",
+			"(@\\w+)\\s(\\w+).+",
+			"\\s+",
+			"^(\\w+).+",
+			"\\[|\\]",
+			"(\\w+)",
+			"\\s",
+			"^(\\w+).+",
+			"@",
+			"\\[|\\]",
+			"body",
+			"remitente",
+			"destinatario",
+			"remitente",
+			"\\s{2,}",
+			"each",
+			"\\s{2,}",
+			"\\s{1,}",
+			"\\s{2,}",
+			"<(\\w+),\\s\\w+(\\(\\w+\\))?,>",
+			"\\[|\\]",
+			"\\s{2,}",
+			"\\\\",
+			"clear",
+			"\\w+\\.(\\w+),\\s",
+			"\\w+\\.\\w+,\\s",
+			"\\w+\\.(\\w+),\\s",
+			",\\s",
+			"\\w+\\.(\\w+)",
+			"\\s{2,}",
+			"\\[|\\]",
+			",",
+			"\\s{3,}",
+			"\\[|\\]",
+			"\\s+",
+			"\\[|\\]",
+			"\\[\\]",
+			".+row\\[\"(\\w+)\"\\].+|row.Field<\\w+>\\(\"(\\w+)\"\\).+",
+			",",
+			"(@\\w+).+",
+			"\\s{2,}",
+			"\\[|\\]",
+			"<(\\w+),\\s\\w+(\\(\\w+(,\\w)*?\\))?,>",
+			"<(\\w+),\\s\\w+(\\(\\w+\\))?,>",
+			"<(\\w+).+>$,",
+			"\\s{2,}",
+			"\\n",
+			"\\[|\\]",
+			"NULL",
+			"^(\\w+)",
+			"NOT NULL",
+			"\\[|\\]",
+			"(\\w+)",
+			",",
+			"VARCHAR",
+			"INT",
+			"\\,$",
+			"\\(\\w+\\).+",
+			"(\\w+)",
+			"\\n",
+			"373825    ",
+			"\\\"",
+			"216",
+			"--select * from Modulo;",
+			"--select * from CuestionarioColocacionPOP",
+			"--select * from CuestionarioBodega",
+			",Canal, Cadena, GerenteCanal AS Gerente_Canal, AsesorComercial as Asesor_Comercial, ZonaNIELSEN AS Zona_NIELSEN, ZonaISCAM AS Zona_ISCAM, Ciudad$",
+			",vbr.Canal, vbr.Cadena, vbr.GerenteCanal, vbr.ZonaNIELSEN, vbr.ZonaISCAM, vbr.Ciudad, vbr.AsesorComercial$",
+			"CREATE procedure",
+			"select Codigo, Usuario, Nombre,CodigoJDE, PDV, FechaVisita as date_Fecha_de_Visita, FechaCaptura as datetime_Fecha_De_Captura,$",
+			"select ROW_NUMBER\\(\\) over\\(order by cues\\.ID\\) as rownum\\,$",
+			"select ROW_NUMBER\\(\\) over\\(order by cues\\.ID\\) as rownum\\,&",
+			"select ROW_NUMBER\\(\\) over\\(order by cues\\.ID\\) as rownum\\,",
+			"select ROW_NUMBER() over(order by cues.ID) as rownum,",
+			"ALTER procedure",
+			"CREATE procedure",
+			"\\n",
+			"\\s{5}",
+			"ALTER "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\t",
+			"",
+			"\\n",
+			"",
+			"$1$2\\n",
+			"$1\\n",
+			"$1\\n$2",
+			"text-left text-success",
+			"col-md-3",
+			"col-md-9",
+			"$1</div><div class=\"col-md-4 text-left\">",
+			"</div><div class=\"col-md-4 text-left\">",
+			"col-md-8 text-right",
+			"div",
+			"UPDATE Cuestionario SET IDModuloEvidencia = $1 WHERE ID = $2;",
+			"public string $1 { get; set; }",
+			"\\n",
+			",\\n",
+			"public string $1 { get; set; }\\n",
+			"public string $1 { get; set; }",
+			"@$1 AS $1",
+			"\"$1\",",
+			"$1 $2 $3",
+			"$1 $2",
+			"\"",
+			"'$1',",
+			"['$1',]",
+			"",
+			"$2",
+			"",
+			"$1",
+			"",
+			"new SqlParameter(\"$1\", SqlDbType.$2) { Value =  },",
+			" ",
+			"$1, ",
+			"",
+			"@$1",
+			" ",
+			"$1,",
+			"",
+			",",
+			"\\n",
+			"$1",
+			"",
+			"$1\\n",
+			"$1",
+			"\\n",
+			"$1",
+			"",
+			", ",
+			"",
+			"$1",
+			",\\n",
+			"new SqlParameter(\"$1\", SqlDbType.Int) { Value =  },",
+			"",
+			"@$1",
+			"",
+			"= NULL",
+			"@$1",
+			"",
+			"vpdv.$1",
+			",\\n",
+			"VarChar",
+			"Int",
+			"",
+			"@$1",
+			", ",
+			"\"",
+			"",
+			",Canal, Cadena, GerenteCanal AS Gerente_Canal, AsesorComercial as Asesor_Comercial, ZonaNIELSEN AS Zona_NIELSEN, ZonaISCAM AS Zona_ISCAM, Ciudad, TipoPDV as Tipo_PDV, SegmentoPDV as Segmento_PDV",
+			",vbr.Canal, vbr.Cadena, vbr.GerenteCanal, vbr.ZonaNIELSEN, vbr.ZonaISCAM, vbr.Ciudad, vbr.AsesorComercial, vbr.TipoPDV, vbr.SegmentoPDV",
+			"GO\\nALTER procedure",
+			"select Codigo, Usuario, Nombre,CodigoJDE, PDV, FechaVisita as date_Fecha_de_Visita, FechaCaptura as datetime_Fecha_De_Captura, IDHistoricoCuestionario,",
+			"select ROW_NUMBER() over(order by cues.ID) as rownum, vbr.IDHistoricoCuestionario,",
+			"GO\\nALTER procedure",
+			"ALTER procedure",
+			",\\n",
+			",",
+			"GO\\nALTER ",
+			"",
+			"\"ID\":0",
+			"\"PDV\":{\"ID\":$1}",
+			"\"Cancelado\":0",
+			"2016-02-02",
+			"",
+			",",
+			"(460,$1),",
+			"(459,$1),",
+			"(458,$1),",
+			"(462,$1),",
+			"(458,$1),",
+			"(453,$1),",
+			",",
+			" int,\\n",
+			" int,\\n\\r",
+			",$1",
+			",",
+			"",
+			"),",
+			"('$1',1)",
+			"",
+			",",
+			"",
+			", ",
+			"$1",
+			" ",
+			"\\s",
+			",",
+			"VarChar",
+			"\"$0\"",
+			"new SqlParameter($0",
+			", SqlDbType.\\U$1\\E$2",
+			", SqlDbType.\\U$1$2",
+			"$1",
+			",",
+			",\\n",
+			" ",
+			",$1 = @$1",
+			"= ",
+			"",
+			", ",
+			"$1",
+			"",
+			"= NULL",
+			"",
+			"@$0",
+			"@$2",
+			"@1$"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/config.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								595,
+								595
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/christian/proyectos/NecroBot/PoGo.NecroBot.CLI/bin/Debug/Config/Translations/translation.es.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										26,
+										27
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": -0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 142.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "dn-web.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"confi",
+				"Web\\app\\scripts\\services\\configuracion.js"
+			],
+			[
+				"awesomevaria",
+				"Web\\bower_components\\components-font-awesome\\scss\\_variables.scss"
+			],
+			[
+				"bootstrapvariable",
+				"Web\\bower_components\\bootstrap-sass-official\\assets\\stylesheets\\bootstrap\\_variables.scss"
+			],
+			[
+				"fontawesomescss",
+				"Web\\bower_components\\components-font-awesome\\scss\\font-awesome.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\Christian\\Desktop\\Mis Proyectos e Investigaciones\\RagasaApps\\DN\\trunk\\Web\\dn-web.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
